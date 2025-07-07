@@ -1,29 +1,15 @@
 {
   "expo": {
-    "name": "app-judo",
-    "slug": "app-judo",
+    "name": "Judô Conde Koma",
+    "slug": "judo-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "icon": "./assets/icons/app-icon.png",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ff6600"
     },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "assetBundlePatterns": ["**/*"]
   }
 }
