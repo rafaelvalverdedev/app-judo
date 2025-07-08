@@ -4,6 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 
+import { View, Text, StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
 import Home from '../screens/Home';
 import Graduacao from '../screens/Graduacao';
 import Historia from '../screens/Historia';
@@ -15,58 +18,68 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Início"
       screenOptions={({ route, navigation }) => ({
         // Header personalizado
+        header: () => (
+          <LinearGradient
+            colors={['#DF221E', '#A81412']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.header}
+          >
+            <Text style={styles.headerTitle}>
+              {route.name.toUpperCase()}
+            </Text>
+          </LinearGradient>
+        ),
         headerStyle: {
-          backgroundColor: '#ff6b6b',
-          height: 100,
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
-          elevation: 5,
+          backgroundColor: '#DF221E', // fundo do topo
+          elevation: 1,                // sem sombra no Android
+          shadowOpacity: 5,            // sem sombra no iOS
         },
+        headerTintColor: '#FFFFFF',    // cor do texto e ícones no header
         headerTitleStyle: {
-          fontSize: 24,
           fontWeight: 'bold',
-          color: '#fff',
+          fontSize: 20,
+          color: '#FFFFFF',
         },
+
         headerTitleAlign: 'center',
 
-        // Tab bar personalizada
-        tabBarStyle: {
+        // Tab bar inferior personalizada
+        tabBarStyle: { 
           position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          elevation: 8,
-          backgroundColor: '#fff',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          height: 80,
-          shadowColor: '#000',
+          height: 65,
+          borderTopLeftRadius: 0,
+          borderTopRightRadius: 0,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          paddingBottom: 5,
+          paddingTop: 5,
+          backgroundColor: '#DF221E',
+          elevation: 10, // sombra no Android
+          shadowColor: '#000', // sombra no iOS
+          shadowOpacity: 0.15,
           shadowOffset: { width: 0, height: -2 },
-          shadowOpacity: 0.1,
-          shadowRadius: 3,
-          paddingBottom: 10,
-          paddingTop: 10,
+          shadowRadius: 6,
+          overflow: 'hidden',
         },
 
-        tabBarActiveTintColor: '#ff6b6b',
-        tabBarInactiveTintColor: '#999',
+        tabBarActiveTintColor: '#6D0F0F',
+        tabBarInactiveTintColor: '#ffffff',
 
         tabBarLabelStyle: {
-          fontSize: 12,
-          fontWeight: '600',
-          marginBottom: 5,
+          fontSize: 14,
         },
 
+        tabBarShowLabel: true,
+
         tabBarItemStyle: {
-          borderRadius: 10,
-          marginHorizontal: 5,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingVertical: 0, 
         },
 
         // Ícones personalizados
@@ -74,16 +87,16 @@ export default function TabNavigator() {
           let iconName: keyof typeof Ionicons.glyphMap = 'home';
 
           switch (route.name) {
-            case 'Home':
+            case 'Início':
               iconName = focused ? 'home' : 'home-outline';
               break;
-            case 'Graduacao':
+            case 'Graduação':
               iconName = focused ? 'medal' : 'medal-outline';
               break;
-            case 'Historia':
+            case 'História':
               iconName = focused ? 'heart' : 'heart-outline';
               break;
-            case 'Noticias':
+            case 'Notícias':
               iconName = focused ? 'newspaper' : 'newspaper-outline';
               break;
             case 'Perfil':
@@ -94,18 +107,59 @@ export default function TabNavigator() {
           return (
             <Ionicons
               name={iconName}
-              size={28}
-              color={focused ? '#ff7f50' : '#ccc'}
+              style={focused ? styles.iconFocused : styles.iconUnfocused}
             />
           );
         },
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Graduacao" component={Graduacao} />
-      <Tab.Screen name="Historia" component={Historia} />
-      <Tab.Screen name="Noticias" component={Noticias} />
+      <Tab.Screen name="Início" component={Home} />
+      <Tab.Screen name="Graduação" component={Graduacao} />
+      <Tab.Screen name="História" component={Historia} />
+      <Tab.Screen name="Notícias" component={Noticias} />
       <Tab.Screen name="Perfil" component={Perfil} />
     </Tab.Navigator >
   );
 }
+
+
+const styles = StyleSheet.create({
+  header: {
+    height: 100,
+    paddingTop: 45,
+    justifyContent: 'center',
+
+    borderBottomLeftRadius: 24,
+    borderBottomRightRadius: 0,
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
+
+  headerTitle: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    letterSpacing: 1.8,
+    left: 30,
+    top: -5,
+  },
+
+  iconFocused: {
+    color: '#6D0F0F',
+    fontSize: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 10,
+  },
+
+  iconUnfocused: {
+    fontSize: 20,
+    color: '#ffffff',
+  },
+
+});

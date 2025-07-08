@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Noticias() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Últimas notícias sobre o judô aparecerão aqui.</Text>
+      <Text style={styles.text}>Estamos construindo essa seção.</Text>
     </View>
   );
 }

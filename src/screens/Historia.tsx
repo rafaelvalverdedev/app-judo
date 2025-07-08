@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Historia() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>História do Judô: Jigoro Kano, origens, evolução...</Text>
+      <Text style={styles.text}>Estamos construindo essa seção.</Text>
     </View>
   );
 }

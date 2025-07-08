@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Perfil() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Seu diário de treino e progresso estará aqui.</Text>
+      <Text style={styles.text}>Estamos construindo essa seção.</Text>
     </View>
   );
 }

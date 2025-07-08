@@ -1,15 +1,46 @@
 {
   "expo": {
     "name": "Judô Conde Koma",
-    "slug": "judo-app",
+    "slug": "judo-conde-koma",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icons/app-icon.png",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ff6600"
+      "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rafaelvalverde.judocondekoma",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.rafaelvalverde.judocondekoma",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/icons/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "626ae467-7eb4-483f-9352-5d4e7fbabece"
+      }
+    },
+    "plugins": [
+      "expo-localization"
+    ],
+    "owner": "rafaelvalverde"
   }
 }
