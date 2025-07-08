@@ -8,7 +8,7 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
@@ -21,6 +21,10 @@
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       }
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000",
+      "barStyle": "light-content"
     },
     "android": {
       "adaptiveIcon": {
@@ -41,6 +45,14 @@
     "plugins": [
       "expo-localization"
     ],
-    "owner": "rafaelvalverde"
+    "owner": "rafaelvalverde",
+    "updates": {
+      "enabled": true,
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/626ae467-7eb4-483f-9352-5d4e7fbabece"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
   }
 }

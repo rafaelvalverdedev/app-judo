@@ -6,6 +6,7 @@ import { TouchableOpacity } from 'react-native';
 
 import { View, Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Home from '../screens/Home';
 import Graduacao from '../screens/Graduacao';
@@ -21,18 +22,23 @@ export default function TabNavigator() {
       initialRouteName="Início"
       screenOptions={({ route, navigation }) => ({
         // Header personalizado
-        header: () => (
-          <LinearGradient
-            colors={['#DF221E', '#A81412']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.header}
-          >
-            <Text style={styles.headerTitle}>
-              {route.name.toUpperCase()}
-            </Text>
-          </LinearGradient>
-        ),
+        header: () => {
+          const insets = useSafeAreaInsets();
+          return (
+            <LinearGradient
+              colors={['#DF221E', '#A81412']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={[styles.header, { paddingTop: insets.top }]}
+            >
+              <Text style={styles.headerTitle}>
+                {route.name.toUpperCase()}
+              </Text>
+            </LinearGradient>
+          );
+        },
+
+
         headerStyle: {
           backgroundColor: '#DF221E', // fundo do topo
           elevation: 1,                // sem sombra no Android
@@ -48,7 +54,7 @@ export default function TabNavigator() {
         headerTitleAlign: 'center',
 
         // Tab bar inferior personalizada
-        tabBarStyle: { 
+        tabBarStyle: {
           position: 'absolute',
           height: 65,
           borderTopLeftRadius: 0,
@@ -79,7 +85,7 @@ export default function TabNavigator() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          paddingVertical: 0, 
+          paddingVertical: 0,
         },
 
         // Ícones personalizados
@@ -126,9 +132,7 @@ export default function TabNavigator() {
 const styles = StyleSheet.create({
   header: {
     height: 100,
-    paddingTop: 45,
     justifyContent: 'center',
-
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 0,
     elevation: 10,
