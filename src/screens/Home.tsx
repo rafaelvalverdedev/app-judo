@@ -1,40 +1,47 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 
-type Props = {
-  navigation: NativeStackNavigationProp<any>;
-};
-
-export default function Home({ navigation }: Props) {
+export default function Home() {
   return (
-    <ScrollView contentContainerStyle={styles.scrollContent}>
-
-      <View style={styles.container}>
-        <Text style={styles.title}>Bem-vindo ao App de Judô</Text>
-
-        <Button title="Ver Graduação" onPress={() => navigation.navigate('Graduação')} />
-        <Button title="História do Judô" onPress={() => navigation.navigate('História')} />
-        <Button title="Notícias" onPress={() => navigation.navigate('Notícias')} />
-        <Button title="Meu Perfil" onPress={() => navigation.navigate('Perfil')} />
-
-      </View>
-
-    </ScrollView>
-
-
-
+    // SafeAreaView para o conteúdo da tela, garantindo que não se sobreponha à barra de status
+    // e à área inferior (se houver gestos)
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Judô Conde Koma</Text>
+          <Text style={styles.paragraph}>
+            Este é o conteúdo da sua tela inicial.
+            Role para baixo para ver mais...
+          </Text>
+          {/* Adicione mais conteúdo para testar a rolagem */}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1, // Permite que a SafeAreaView ocupe todo o espaço disponível
+  },
   scrollContent: {
-    flexGrow: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 16,
+    flexGrow: 1, // Permite que o conteúdo do ScrollView se expanda
+    paddingTop: 15, // Adicione um pouco de padding no topo se o conteúdo ficar muito perto do header
+    paddingBottom: 55, // Adicione um pouco de padding na parte inferior
+  },
+  container: {
+    flex: 1, // Opcional, dependendo do seu layout
     justifyContent: 'center',
     alignItems: 'center',
   },
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 10 },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20 },
+
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+
+  paragraph: {
+    fontSize: 16,
+    textAlign: 'center',
+  },
 });

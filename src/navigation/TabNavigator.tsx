@@ -2,11 +2,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native';
-
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native'; // Importe StatusBar e SafeAreaView
 import { LinearGradient } from 'expo-linear-gradient';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import * as Animatable from 'react-native-animatable';
 
 import Home from '../screens/Home';
 import Graduacao from '../screens/Graduacao';
@@ -16,154 +15,173 @@ import Perfil from '../screens/Perfil';
 
 const Tab = createBottomTabNavigator();
 
+const TITULOS: Record<string, string> = {
+  Início: "CONDE KOMA",
+  Perfil: "Meu Perfil",
+  Notícias: "Notícias",
+  Graduação: "Graduação",
+  História: "História do Judô",
+};
+
 export default function TabNavigator() {
   return (
-    <Tab.Navigator
-      initialRouteName="Início"
-      screenOptions={({ route, navigation }) => ({
-        // Header personalizado
-        header: () => {
-          const insets = useSafeAreaInsets();
-          return (
-            <LinearGradient
-              colors={['#DF221E', '#A81412']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={[styles.header, { paddingTop: insets.top }]}
-            >
-              <Text style={styles.headerTitle}>
-                {route.name.toUpperCase()}
-              </Text>
-            </LinearGradient>
-          );
-        },
+    <>
+      {/* Configuração da Barra de Status para combinar com o header */}
+      <StatusBar backgroundColor="#6D0F0F" barStyle="light-content" />
 
+      <Tab.Navigator
+        initialRouteName="Início"
+        screenOptions={({ route, navigation }) => ({
+          // Header personalizado
+          header: () => {
+            return (
+              // SafeAreaView para garantir que o cabeçalho esteja abaixo da barra de status
+              <SafeAreaView style={styles.safeArea}>
+                <LinearGradient
+                  colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                  style={styles.header}
+                >
+                  {route.name === 'Início' && (
+                    <Image style={styles.headerLogo}
+                      source={require('../../assets/logo/logo.png')}
+                      resizeMode="cover"
+                    />
+                  )}
+                  <Text style={styles.headerTitle}>
+                    {TITULOS[route.name] || route.name.toUpperCase()}
+                  </Text>
+                </LinearGradient>
+              </SafeAreaView>
+            );
+          },
 
-        headerStyle: {
-          backgroundColor: '#DF221E', // fundo do topo
-          elevation: 1,                // sem sombra no Android
-          shadowOpacity: 5,            // sem sombra no iOS
-        },
-        headerTintColor: '#FFFFFF',    // cor do texto e ícones no header
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 20,
-          color: '#FFFFFF',
-        },
+          // Tab bar inferior personalizada
+          tabBarStyle: {
+            position: 'absolute',
+            height: 65,
+            borderTopLeftRadius: 0,
+            borderTopRightRadius: 0,
+            backgroundColor: '#EDF2F4',
+            elevation: 10, // sombra no Android
+            overflow: 'hidden',
+          },
 
-        headerTitleAlign: 'center',
-
-        // Tab bar inferior personalizada
-        tabBarStyle: {
-          position: 'absolute',
-          height: 65,
-          borderTopLeftRadius: 0,
-          borderTopRightRadius: 0,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingBottom: 5,
-          paddingTop: 5,
-          backgroundColor: '#DF221E',
-          elevation: 10, // sombra no Android
-          shadowColor: '#000', // sombra no iOS
-          shadowOpacity: 0.15,
-          shadowOffset: { width: 0, height: -2 },
-          shadowRadius: 6,
-          overflow: 'hidden',
-        },
-
-        tabBarActiveTintColor: '#6D0F0F',
-        tabBarInactiveTintColor: '#ffffff',
-
-        tabBarLabelStyle: {
-          fontSize: 14,
-        },
-
-        tabBarShowLabel: true,
-
-        tabBarItemStyle: {
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingVertical: 0,
-        },
-
-        // Ícones personalizados
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: keyof typeof Ionicons.glyphMap = 'home';
-
-          switch (route.name) {
-            case 'Início':
-              iconName = focused ? 'home' : 'home-outline';
-              break;
-            case 'Graduação':
-              iconName = focused ? 'medal' : 'medal-outline';
-              break;
-            case 'História':
-              iconName = focused ? 'heart' : 'heart-outline';
-              break;
-            case 'Notícias':
-              iconName = focused ? 'newspaper' : 'newspaper-outline';
-              break;
-            case 'Perfil':
-              iconName = focused ? 'person' : 'person-outline';
-              break;
-          }
-
-          return (
-            <Ionicons
-              name={iconName}
-              style={focused ? styles.iconFocused : styles.iconUnfocused}
+          tabBarButton: (props) => (
+            <Pressable
+              {...props}
+              android_ripple={{ color: '#8D99AE' }} // desativa o ripple nativo
             />
-          );
-        },
-      })}
-    >
-      <Tab.Screen name="Início" component={Home} />
-      <Tab.Screen name="Graduação" component={Graduacao} />
-      <Tab.Screen name="História" component={Historia} />
-      <Tab.Screen name="Notícias" component={Noticias} />
-      <Tab.Screen name="Perfil" component={Perfil} />
-    </Tab.Navigator >
+          ),
+
+          tabBarLabel: ({ focused }) => (
+            <Text style={focused ? styles.textFocused : styles.textUnfocused}>
+              {route.name}
+            </Text>
+          ),
+
+          // Ícones personalizados
+          tabBarIcon: ({ focused }) => {
+            let iconName: keyof typeof Ionicons.glyphMap = 'home';
+
+            switch (route.name) {
+              case 'Início':
+                iconName = focused ? 'home' : 'home-outline';
+                break;
+              case 'Graduação':
+                iconName = focused ? 'medal' : 'medal-outline';
+                break;
+              case 'História':
+                iconName = focused ? 'heart' : 'heart-outline';
+                break;
+              case 'Notícias':
+                iconName = focused ? 'newspaper' : 'newspaper-outline';
+                break;
+              case 'Perfil':
+                iconName = focused ? 'person' : 'person-outline';
+                break;
+            }
+
+            const iconStyle = focused ? styles.iconFocused : styles.iconUnfocused;
+
+            return (
+              <Animatable.View
+                key={focused.toString() + route.name} // força recriação para bounceIn
+                animation={focused
+                  ? {
+                    0: { transform: [{ scale: 1 }] },
+                    0.5: { transform: [{ scale: 1.25 }] }, // Ajustado para 1.25 para um salto mais sutil
+                    1: { transform: [{ scale: 1 }] },
+                  }
+                  : undefined
+                }
+                iterationCount={focused ? 'infinite' : 1} // 'infinite' para focado, 1 para desfocado
+                duration={1000} // <-- **MUDE AQUI: Duração de 1 segundo (1000ms)**
+                useNativeDriver // <-- **ADICIONE AQUI: Para melhor desempenho da animação**
+              >
+                <Ionicons name={iconName} style={iconStyle} />
+              </Animatable.View>
+            );
+          },
+        })}
+      >
+        <Tab.Screen name="Início" component={Home} />
+        <Tab.Screen name="Graduação" component={Graduacao} />
+        <Tab.Screen name="História" component={Historia} />
+        <Tab.Screen name="Notícias" component={Noticias} />
+        <Tab.Screen name="Perfil" component={Perfil} />
+      </Tab.Navigator >
+    </>
   );
 }
 
-
 const styles = StyleSheet.create({
+  // Estilo para a SafeAreaView que envolve o cabeçalho
+  safeArea: {
+    backgroundColor: '#6D0F0F', // Garante que a área segura tenha a cor do cabeçalho
+    borderBottomRightRadius: 50, // Mantém o border radius na parte inferior direita da safeArea
+    top: 35,
+  },
+
   header: {
-    height: 100,
-    justifyContent: 'center',
-    borderBottomLeftRadius: 24,
-    borderBottomRightRadius: 0,
-    elevation: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+    height: 80, // Altura ajustada para compensar o padding da SafeAreaView
+    // paddingTop foi removido aqui, pois a SafeAreaView lida com isso
   },
 
   headerTitle: {
-    color: '#fff',
+    position: 'relative',
+    color: '#FFFFFF',
     fontSize: 20,
     fontWeight: 'bold',
-    letterSpacing: 1.8,
-    left: 30,
-    top: -5,
+  },
+
+  headerLogo: {
+    position: 'relative',
+    width: 50,
+    height: 50,
+    margin: 10,
   },
 
   iconFocused: {
-    color: '#6D0F0F',
-    fontSize: 24,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 10,
+    color: '#A81412',
+    fontSize: 22,
   },
 
   iconUnfocused: {
     fontSize: 20,
-    color: '#ffffff',
+    color: '#8D99AE',
   },
 
+  textFocused: {
+    color: '#A81412',
+    fontSize: 14,
+  },
+
+  textUnfocused: {
+    color: '#8D99AE',
+    fontSize: 14,
+  },
 });
