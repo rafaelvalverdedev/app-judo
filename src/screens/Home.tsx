@@ -13,6 +13,93 @@ export default function Home() {
             Este é o conteúdo da sua tela inicial.
             Role para baixo para ver mais...
           </Text>
+
+
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text>bbbbbbbbbbbbbb</Text>
+          <Text>aaaaaaaaaaaa</Text>
           {/* Adicione mais conteúdo para testar a rolagem */}
         </View>
       </ScrollView>
@@ -24,11 +111,13 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1, // Permite que a SafeAreaView ocupe todo o espaço disponível
   },
+
   scrollContent: {
     flexGrow: 1, // Permite que o conteúdo do ScrollView se expanda
-    paddingTop: 15, // Adicione um pouco de padding no topo se o conteúdo ficar muito perto do header
-    paddingBottom: 55, // Adicione um pouco de padding na parte inferior
+    paddingTop: 45,
+    paddingBottom: 70,
   },
+  
   container: {
     flex: 1, // Opcional, dependendo do seu layout
     justifyContent: 'center',
