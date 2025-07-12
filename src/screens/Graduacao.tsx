@@ -1,65 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View, Text, ScrollView, StyleSheet,
   TouchableOpacity, Modal, Linking, SafeAreaView
 } from 'react-native';
 
-const faixas = [
-  {
-    cor: '#FFFFFF',
-    nome: 'Faixa Branca',
-    requisitos: ['Conhecer regras básicas', 'Cumprimento correto'],
-    videoUrl: 'https://www.youtube.com/watch?v=video1',
-  },
-  {
-    cor: '#9b9494ff',
-    nome: 'Faixa Cinza',
-    requisitos: ['Conhecer regras básicas', 'Cumprimento correto'],
-    videoUrl: 'https://www.youtube.com/watch?v=video1',
-  },
-  {
-    cor: '#416ecfff',
-    nome: 'Faixa Azul',
-    requisitos: ['Quedas básicas', 'Postura e deslocamento'],
-    videoUrl: 'https://www.youtube.com/watch?v=video2',
-  },
-  {
-    cor: '#e0de3bff',
-    nome: 'Faixa Amarela',
-    requisitos: ['Quedas básicas', 'Postura e deslocamento'],
-    videoUrl: 'https://www.youtube.com/watch?v=video2',
-  },
-  {
-    cor: '#FF8C00',
-    nome: 'Faixa Laranja',
-    requisitos: ['Movimentação lateral', 'Técnicas de projeção'],
-    videoUrl: 'https://www.youtube.com/watch?v=video3',
-  },
-  {
-    cor: '#50226eff',
-    nome: 'Faixa Roxa',
-    requisitos: ['Movimentação lateral', 'Técnicas de projeção'],
-    videoUrl: 'https://www.youtube.com/watch?v=video3',
-  },
-  {
-    cor: '#423830ff',
-    nome: 'Faixa Marrom',
-    requisitos: ['Movimentação lateral', 'Técnicas de projeção'],
-    videoUrl: 'https://www.youtube.com/watch?v=video3',
-  },
-  {
-    cor: '#000000ff',
-    nome: 'Faixa Preta',
-    requisitos: ['Movimentação lateral', 'Técnicas de projeção'],
-    videoUrl: 'https://www.youtube.com/watch?v=video3',
-  },
-];
+type Faixa = {
+  cor: string;
+  nome: string;
+  requisitos: string[];
+  videoUrl: string;
+};
 
 export default function Graduacao() {
+  const [faixas, setFaixas] = useState<Faixa[]>([]);
   const [modalVisible, setModalVisible] = useState(false);
-  const [faixaSelecionada, setFaixaSelecionada] = useState<any>(null);
+  const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
 
-  const abrirModal = (faixa: any) => {
+  useEffect(() => {
+    const fetchFaixas = async () => {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json');
+        const data = await response.json();
+        setFaixas(data);
+      } catch (error) {
+        console.error('Erro ao carregar faixas:', error);
+      }
+    };
+
+    fetchFaixas();
+  }, []);
+
+  const abrirModal = (faixa: Faixa) => {
     setFaixaSelecionada(faixa);
     setModalVisible(true);
   };
@@ -82,7 +53,6 @@ export default function Graduacao() {
         ))}
       </ScrollView>
 
-      {/* Modal para conteúdo extra */}
       <Modal
         visible={modalVisible}
         animationType="slide"
@@ -94,16 +64,13 @@ export default function Graduacao() {
             {faixaSelecionada && (
               <>
                 <Text style={styles.modalTitulo}>{faixaSelecionada.nome}</Text>
-                {/* 🔽 Aqui você pode colocar conteúdo adicional */}
                 <Text style={styles.modalConteudo}>
                   Aqui você pode adicionar informações extras como:
                   {'\n'}• História da faixa
                   {'\n'}• Orientações para exames
                   {'\n'}• Duração mínima
                   {'\n'}• Curiosidades sobre a graduação
-                  {'\n\n'}Este conteúdo pode ser personalizado faixa por faixa.
                 </Text>
-
                 <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.botaoFechar}>
                   <Text style={styles.botaoFecharTexto}>Fechar</Text>
                 </TouchableOpacity>
@@ -115,6 +82,7 @@ export default function Graduacao() {
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   safeArea: {

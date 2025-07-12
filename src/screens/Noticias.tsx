@@ -3,8 +3,6 @@ import {
   View, Text, FlatList, StyleSheet, Image, RefreshControl, TouchableOpacity,
 } from 'react-native';
 
-import noticiasJson from '../noticias.json'; // <== AQUI
-
 type Noticia = {
   id: string;
   titulo: string;
@@ -17,9 +15,16 @@ export default function Noticias() {
   const [noticias, setNoticias] = useState<Noticia[]>([]);
   const [refreshing, setRefreshing] = useState(false);
 
-  const carregarNoticias = () => {
-    setNoticias(noticiasJson);
-    setRefreshing(false);
+  const carregarNoticias = async () => {
+    try {
+      const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/noticias.json');
+      const data = await response.json();
+      setNoticias(data);
+    } catch (error) {
+      console.error('Erro ao carregar notícias:', error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   useEffect(() => {
@@ -28,9 +33,7 @@ export default function Noticias() {
 
   const onRefresh = () => {
     setRefreshing(true);
-    setTimeout(() => {
-      carregarNoticias();
-    }, 500);
+    carregarNoticias();
   };
 
   const renderItem = ({ item }: { item: Noticia }) => (
@@ -56,6 +59,7 @@ export default function Noticias() {
     />
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     padding: 16,
