@@ -11,7 +11,7 @@
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
-    "cor": "#9b9494ff",
+    "cor": "#9b9494",
     "nome": "Faixa Cinza",
     "requisitos": [
       "Conhecer regras básicas",
@@ -21,7 +21,7 @@
     "descricao": "A Faixa Cinza representa a progressão inicial da criança. Aqui o judoca já começa a entender quedas básicas e respeito com o colega."
   },
   {
-    "cor": "#416ecfff",
+    "cor": "#416ecf",
     "nome": "Faixa Azul",
     "requisitos": [
       "Quedas básicas",
@@ -31,7 +31,7 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "#e0de3bff",
+    "cor": "#e0de3b",
     "nome": "Faixa Amarela",
     "requisitos": [
       "Quedas básicas",
@@ -51,7 +51,7 @@
     "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
   },
   {
-    "cor": "#50226eff",
+    "cor": "#50226e",
     "nome": "Faixa Roxa",
     "requisitos": [
       "Movimentação lateral",
@@ -61,7 +61,7 @@
     "descricao": "A Faixa Roxa destaca o judoca como intermediário-avançado, dominando diversas técnicas e já auxiliando colegas iniciantes."
   },
   {
-    "cor": "#423830ff",
+    "cor": "#423830",
     "nome": "Faixa Marrom",
     "requisitos": [
       "Movimentação lateral",
@@ -71,7 +71,7 @@
     "descricao": "A Faixa Marrom antecede a faixa preta. O judoca tem sólida base técnica, preparo físico e compreensão do espírito do judô."
   },
   {
-    "cor": "#000000ff",
+    "cor": "#000000",
     "nome": "Faixa Preta",
     "requisitos": [
       "Movimentação lateral",

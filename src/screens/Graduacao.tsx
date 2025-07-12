@@ -144,12 +144,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#d6dde0ff',
   },
+
   scrollContent: {
     flexGrow: 1,
     paddingTop: 45,
     paddingBottom: 55,
     padding: 20,
   },
+
   card: {
     backgroundColor: '#eeededff',
     borderRadius: 10,
@@ -157,27 +159,34 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     elevation: 4,
   },
+
   faixa: {
     width: '100%',
-    height: 10,
+    height: 7,
     borderRadius: 5,
     marginBottom: 8,
+    borderBottomColor: '#e6e2e2ff',
+    borderBottomWidth: 1,
   },
+
   titulo: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 6,
   },
+
   subtitulo: {
     fontSize: 14,
     fontWeight: '600',
     marginTop: 10,
   },
+
   item: {
     fontSize: 13,
     marginLeft: 10,
     marginTop: 2,
   },
+
   link: {
     color: '#A81412',
     marginTop: 10,
@@ -185,12 +194,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'right',
   },
+
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.6)',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  
   modalContainer: {
     backgroundColor: '#fff',
     width: '90%',
@@ -199,27 +210,32 @@ const styles = StyleSheet.create({
     padding: 20,
     elevation: 10,
   },
+
   modalScrollContent: {
     paddingBottom: 30,
   },
+
   modalTitulo: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
     textAlign: 'center',
   },
+
   modalImagem: {
     width: '100%',
     height: 150,
     marginBottom: 16,
     borderRadius: 8,
   },
+
   modalConteudo: {
     fontSize: 14,
     lineHeight: 22,
     color: '#333',
     textAlign: 'justify',
   },
+
   botaoFechar: {
     marginTop: 20,
     alignSelf: 'flex-end',
@@ -227,10 +243,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#A81412',
     borderRadius: 6,
   },
+
   botaoFecharTexto: {
     color: '#fff',
     fontWeight: 'bold',
   },
+
   centered: {
     flex: 1,
     justifyContent: 'center',
