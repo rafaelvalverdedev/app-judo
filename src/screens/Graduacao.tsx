@@ -10,6 +10,7 @@ import {
   ActivityIndicator,
   Button,
   RefreshControl,
+  Image,
 } from 'react-native';
 
 type Faixa = {
@@ -17,6 +18,7 @@ type Faixa = {
   nome: string;
   requisitos: string[];
   videoUrl: string;
+  imagem?: string;
   descricao: string;
 };
 
@@ -32,7 +34,7 @@ export default function Graduacao() {
     setError('');
     try {
       const response = await fetch(
-        `https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json`
+        `https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json?nocache=${Date.now()}`
       );
       if (!response.ok) throw new Error('Erro ao acessar os dados');
       const data = await response.json();
@@ -103,26 +105,36 @@ export default function Graduacao() {
 
       <Modal
         visible={modalVisible}
-        animationType="slide"
+        animationType="fade"
         transparent
         onRequestClose={() => setModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
             {faixaSelecionada && (
-              <>
+              <ScrollView contentContainerStyle={styles.modalScrollContent}>
                 <Text style={styles.modalTitulo}>{faixaSelecionada.nome}</Text>
-                <Text style={styles.modalConteudo}>{faixaSelecionada.descricao}</Text>
+
+                {faixaSelecionada.imagem && (
+                  <Image
+                    source={{ uri: faixaSelecionada.imagem }}
+                    style={styles.modalImagem}
+                    resizeMode="contain"
+                  />
+                )}
+
+                <Text style={styles.modalConteudo}>
+                  {faixaSelecionada.descricao}
+                </Text>
 
                 <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.botaoFechar}>
                   <Text style={styles.botaoFecharTexto}>Fechar</Text>
                 </TouchableOpacity>
-              </>
+              </ScrollView>
             )}
           </View>
         </View>
       </Modal>
-
     </SafeAreaView>
   );
 }
@@ -167,10 +179,11 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   link: {
-    textAlign: 'right',
     color: '#A81412',
     marginTop: 10,
+    fontSize: 10,
     fontWeight: 'bold',
+    textAlign: 'right',
   },
   modalOverlay: {
     flex: 1,
@@ -180,10 +193,14 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     backgroundColor: '#fff',
-    width: '85%',
+    width: '90%',
+    height: '80%',
     borderRadius: 12,
     padding: 20,
     elevation: 10,
+  },
+  modalScrollContent: {
+    paddingBottom: 30,
   },
   modalTitulo: {
     fontSize: 20,
@@ -191,10 +208,17 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'center',
   },
+  modalImagem: {
+    width: '100%',
+    height: 150,
+    marginBottom: 16,
+    borderRadius: 8,
+  },
   modalConteudo: {
     fontSize: 14,
-    lineHeight: 20,
+    lineHeight: 22,
     color: '#333',
+    textAlign: 'justify',
   },
   botaoFechar: {
     marginTop: 20,
