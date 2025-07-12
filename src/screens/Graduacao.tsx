@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import {
-  View, Text, ScrollView, StyleSheet,
-  TouchableOpacity, Modal, SafeAreaView, ActivityIndicator, Button,
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  SafeAreaView,
+  ActivityIndicator,
+  Button,
+  RefreshControl,
 } from 'react-native';
 
 type Faixa = {
@@ -15,35 +23,43 @@ export default function Graduacao() {
   const [faixas, setFaixas] = useState<Faixa[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [refreshing, setRefreshing] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
 
-  const fetchFaixas = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json');
-      if (!response.ok) throw new Error('Erro ao acessar os dados');
-      const data = await response.json();
-      setFaixas(data);
-    } catch (err) {
-      setError('Não foi possível carregar os dados. Verifique sua conexão ou tente novamente mais tarde.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+const fetchFaixas = async () => {
+  setError('');
+  try {
+    const response = await fetch(
+      `https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json`
+    );
+    if (!response.ok) throw new Error('Erro ao acessar os dados');
+    const data = await response.json();
+    setFaixas(data);
+  } catch (err) {
+    setError('Não foi possível carregar os dados. Verifique sua conexão ou tente novamente mais tarde.');
+    console.error(err);
+  } finally {
+    setLoading(false);
+    setRefreshing(false);
+  }
+};
 
   useEffect(() => {
     fetchFaixas();
   }, []);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    fetchFaixas();
+  };
 
   const abrirModal = (faixa: Faixa) => {
     setFaixaSelecionada(faixa);
     setModalVisible(true);
   };
 
-  if (loading) {
+  if (loading && !refreshing) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator size="large" color="#A81412" />
@@ -55,15 +71,20 @@ export default function Graduacao() {
   if (error) {
     return (
       <View style={styles.centered}>
-        <Text style={{ color: 'red', marginBottom: 10 }}>{error}</Text>
-        <Button title="Tentar novamente" onPress={fetchFaixas} color="#A81412" />
+        <Text style={{ color: 'red', marginBottom: 10, textAlign: 'center' }}>{error}</Text>
+        <Button title="Tentar novamente" onPress={() => { setLoading(true); fetchFaixas(); }} color="#A81412" />
       </View>
     );
   }
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={['#A81412']} />
+        }
+      >
         {faixas.map((faixa, index) => (
           <View key={index} style={styles.card}>
             <TouchableOpacity onPress={() => abrirModal(faixa)}>
@@ -133,12 +154,26 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 8,
   },
-  titulo: { fontSize: 18, fontWeight: 'bold', marginBottom: 6 },
-  subtitulo: { fontSize: 14, fontWeight: '600', marginTop: 10 },
-  item: { fontSize: 13, marginLeft: 10, marginTop: 2 },
-  link: { color: '#A81412', marginTop: 10, fontWeight: 'bold' },
-
-  // MODAL
+  titulo: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 6,
+  },
+  subtitulo: {
+    fontSize: 14,
+    fontWeight: '600',
+    marginTop: 10,
+  },
+  item: {
+    fontSize: 13,
+    marginLeft: 10,
+    marginTop: 2,
+  },
+  link: {
+    color: '#A81412',
+    marginTop: 10,
+    fontWeight: 'bold',
+  },
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
