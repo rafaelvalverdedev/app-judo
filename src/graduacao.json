@@ -1,10 +1,4 @@
 [
-    {
-    "cor": "#ff8855",
-    "nome": "Faixa teste",
-    "requisitos": ["Conhecer regras básicas", "Cumprimento correto"],
-    "videoUrl": "https://www.youtube.com/watch?v=video1"
-  },
   {
     "cor": "#FFFFFF",
     "nome": "Faixa Branca",
