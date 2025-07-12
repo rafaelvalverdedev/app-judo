@@ -167,6 +167,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   link: {
+    textAlign: 'right',
     color: '#A81412',
     marginTop: 10,
     fontWeight: 'bold',
