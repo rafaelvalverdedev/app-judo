@@ -4,47 +4,5 @@
     "nome": "Faixa Branca",
     "requisitos": ["Conhecer regras básicas", "Cumprimento correto"],
     "videoUrl": "https://www.youtube.com/watch?v=video1"
-  },
-  {
-    "cor": "#9b9494ff",
-    "nome": "Faixa Cinza",
-    "requisitos": ["Conhecer regras básicas", "Cumprimento correto"],
-    "videoUrl": "https://www.youtube.com/watch?v=video1"
-  },
-  {
-    "cor": "#416ecfff",
-    "nome": "Faixa Azul",
-    "requisitos": ["Quedas básicas", "Postura e deslocamento"],
-    "videoUrl": "https://www.youtube.com/watch?v=video2"
-  },
-  {
-    "cor": "#e0de3bff",
-    "nome": "Faixa Amarela",
-    "requisitos": ["Quedas básicas", "Postura e deslocamento"],
-    "videoUrl": "https://www.youtube.com/watch?v=video2"
-  },
-  {
-    "cor": "#FF8C00",
-    "nome": "Faixa Laranja",
-    "requisitos": ["Movimentação lateral", "Técnicas de projeção"],
-    "videoUrl": "https://www.youtube.com/watch?v=video3"
-  },
-  {
-    "cor": "#50226eff",
-    "nome": "Faixa Roxa",
-    "requisitos": ["Movimentação lateral", "Técnicas de projeção"],
-    "videoUrl": "https://www.youtube.com/watch?v=video3"
-  },
-  {
-    "cor": "#423830ff",
-    "nome": "Faixa Marrom",
-    "requisitos": ["Movimentação lateral", "Técnicas de projeção"],
-    "videoUrl": "https://www.youtube.com/watch?v=video3"
-  },
-  {
-    "cor": "#000000ff",
-    "nome": "Faixa Preta",
-    "requisitos": ["Movimentação lateral", "Técnicas de projeção"],
-    "videoUrl": "https://www.youtube.com/watch?v=video3"
   }
 ]

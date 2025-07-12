@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   View, Text, ScrollView, StyleSheet,
-  TouchableOpacity, Modal, Linking, SafeAreaView
+  TouchableOpacity, Modal, SafeAreaView, ActivityIndicator, Button,
 } from 'react-native';
 
 type Faixa = {
@@ -13,20 +13,28 @@ type Faixa = {
 
 export default function Graduacao() {
   const [faixas, setFaixas] = useState<Faixa[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
 
-  useEffect(() => {
-    const fetchFaixas = async () => {
-      try {
-        const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json');
-        const data = await response.json();
-        setFaixas(data);
-      } catch (error) {
-        console.error('Erro ao carregar faixas:', error);
-      }
-    };
+  const fetchFaixas = async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json');
+      if (!response.ok) throw new Error('Erro ao acessar os dados');
+      const data = await response.json();
+      setFaixas(data);
+    } catch (err) {
+      setError('Não foi possível carregar os dados. Verifique sua conexão ou tente novamente mais tarde.');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchFaixas();
   }, []);
 
@@ -34,6 +42,24 @@ export default function Graduacao() {
     setFaixaSelecionada(faixa);
     setModalVisible(true);
   };
+
+  if (loading) {
+    return (
+      <View style={styles.centered}>
+        <ActivityIndicator size="large" color="#A81412" />
+        <Text style={{ marginTop: 10 }}>Carregando faixas...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.centered}>
+        <Text style={{ color: 'red', marginBottom: 10 }}>{error}</Text>
+        <Button title="Tentar novamente" onPress={fetchFaixas} color="#A81412" />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -82,7 +108,6 @@ export default function Graduacao() {
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -148,5 +173,12 @@ const styles = StyleSheet.create({
   botaoFecharTexto: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#f4f4f4',
   },
 });
