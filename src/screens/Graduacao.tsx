@@ -17,6 +17,7 @@ type Faixa = {
   nome: string;
   requisitos: string[];
   videoUrl: string;
+  descricao: string;
 };
 
 export default function Graduacao() {
@@ -27,23 +28,23 @@ export default function Graduacao() {
   const [modalVisible, setModalVisible] = useState(false);
   const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
 
-const fetchFaixas = async () => {
-  setError('');
-  try {
-    const response = await fetch(
-      `https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json`
-    );
-    if (!response.ok) throw new Error('Erro ao acessar os dados');
-    const data = await response.json();
-    setFaixas(data);
-  } catch (err) {
-    setError('Não foi possível carregar os dados. Verifique sua conexão ou tente novamente mais tarde.');
-    console.error(err);
-  } finally {
-    setLoading(false);
-    setRefreshing(false);
-  }
-};
+  const fetchFaixas = async () => {
+    setError('');
+    try {
+      const response = await fetch(
+        `https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json`
+      );
+      if (!response.ok) throw new Error('Erro ao acessar os dados');
+      const data = await response.json();
+      setFaixas(data);
+    } catch (err) {
+      setError('Não foi possível carregar os dados. Verifique sua conexão ou tente novamente mais tarde.');
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  };
 
   useEffect(() => {
     fetchFaixas();
@@ -111,13 +112,8 @@ const fetchFaixas = async () => {
             {faixaSelecionada && (
               <>
                 <Text style={styles.modalTitulo}>{faixaSelecionada.nome}</Text>
-                <Text style={styles.modalConteudo}>
-                  Aqui você pode adicionar informações extras como:
-                  {'\n'}• História da faixa
-                  {'\n'}• Orientações para exames
-                  {'\n'}• Duração mínima
-                  {'\n'}• Curiosidades sobre a graduação
-                </Text>
+                <Text style={styles.modalConteudo}>{faixaSelecionada.descricao}</Text>
+
                 <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.botaoFechar}>
                   <Text style={styles.botaoFecharTexto}>Fechar</Text>
                 </TouchableOpacity>
@@ -126,6 +122,7 @@ const fetchFaixas = async () => {
           </View>
         </View>
       </Modal>
+
     </SafeAreaView>
   );
 }
