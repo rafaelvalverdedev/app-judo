@@ -3,6 +3,8 @@
     "cor": "#FFFFFF",
     "nome": "Faixa Branca",
     "requisitos": [
+      "4 anos",
+      "Primeira faixa, introdutória",
       "Conhecer regras básicas",
       "Cumprimento correto"
     ],
@@ -14,8 +16,9 @@
     "cor": "#9b9494",
     "nome": "Faixa Cinza",
     "requisitos": [
-      "Conhecer regras básicas",
-      "Cumprimento correto"
+      "5 anos",
+      "Tempo mínimo 1 ano",
+      "Aprender Ukemis (quedas), posturas, primeiros golpes"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=video1",
     "descricao": "A Faixa Cinza representa a progressão inicial da criança. Aqui o judoca já começa a entender quedas básicas e respeito com o colega."
@@ -24,8 +27,9 @@
     "cor": "#416ecf",
     "nome": "Faixa Azul",
     "requisitos": [
-      "Quedas básicas",
-      "Postura e deslocamento"
+      "7 anos",
+      "Tempo mínimo 1 ano",
+      "Técnicas básicas de Nage-Waza e Katame-Waza"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=video2",
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
@@ -34,7 +38,8 @@
     "cor": "#e0de3b",
     "nome": "Faixa Amarela",
     "requisitos": [
-      "Quedas básicas",
+      "9 anos",
+      "Tempo mínimo 1 ano",
       "Postura e deslocamento"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=video2",
@@ -44,6 +49,20 @@
     "cor": "#FF8C00",
     "nome": "Faixa Laranja",
     "requisitos": [
+      "11 anos",
+      "Tempo mínimo 1 ano",
+      "Movimentação lateral",
+      "Técnicas de projeção"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
+  },
+  {
+    "cor": "#1e4b19",
+    "nome": "Faixa Verde",
+    "requisitos": [
+      "13 anos",
+      "Tempo mínimo 1 ano",
       "Movimentação lateral",
       "Técnicas de projeção"
     ],
@@ -54,6 +73,8 @@
     "cor": "#50226e",
     "nome": "Faixa Roxa",
     "requisitos": [
+      "15 anos",
+      "Tempo mínimo 1 ano",
       "Movimentação lateral",
       "Técnicas de projeção"
     ],
@@ -64,6 +85,8 @@
     "cor": "#423830",
     "nome": "Faixa Marrom",
     "requisitos": [
+      "17 anos",
+      "Tempo mínimo 1 ano",
       "Movimentação lateral",
       "Técnicas de projeção"
     ],
@@ -74,6 +97,8 @@
     "cor": "#000000",
     "nome": "Faixa Preta",
     "requisitos": [
+      "18 anos",
+      "Tempo mínimo 1 ano",
       "Movimentação lateral",
       "Técnicas de projeção"
     ],

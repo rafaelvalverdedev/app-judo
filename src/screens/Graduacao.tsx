@@ -88,6 +88,23 @@ export default function Graduacao() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={['#A81412']} />
         }
       >
+        <View style={styles.cardPrincipal}>
+
+          <Text style={styles.titulo}>
+            O Judô é uma arte marcial que valoriza a disciplina, o respeito e o aprendizado contínuo.
+          </Text>
+          <Text style={styles.subtitulo}>O que são as graduações?</Text>
+          <Text>
+            A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e o tempo de prática de cada judoca.
+          </Text>
+          <Text style={styles.subtitulo}>Como funciona a progressão?</Text>
+          <Text>As graduações do judô são divididas em dois grandes grupos:</Text>
+          <Text style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca. São utilizadas por praticantes federados e não-federados, incluindo atletas que competem regularmente em torneios oficiais. Cada faixa indica o avanço técnico e a maturidade do judoca.</Text>
+         <Text> </Text>
+          <Text style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Text>
+
+        </View>
+
         {faixas.map((faixa, index) => (
           <View key={index} style={styles.card}>
             <TouchableOpacity onPress={() => abrirModal(faixa)}>
@@ -142,18 +159,26 @@ export default function Graduacao() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#d6dde0ff',
+    backgroundColor: '#d6dde0',
   },
 
   scrollContent: {
     flexGrow: 1,
-    paddingTop: 45,
+    paddingTop: 20,
     paddingBottom: 55,
     padding: 20,
   },
 
+  cardPrincipal: {
+    backgroundColor: '#f6f6f6',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 20,
+    elevation: 4,
+  },
+
   card: {
-    backgroundColor: '#eeededff',
+    backgroundColor: '#eeeded',
     borderRadius: 10,
     padding: 16,
     marginBottom: 20,
@@ -165,8 +190,8 @@ const styles = StyleSheet.create({
     height: 7,
     borderRadius: 5,
     marginBottom: 8,
-    borderBottomColor: '#e6e2e2ff',
     borderBottomWidth: 1,
+    borderBottomColor: '#b1b0b0',
   },
 
   titulo: {
@@ -201,7 +226,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
+
   modalContainer: {
     backgroundColor: '#fff',
     width: '90%',

@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   safeArea: {
     backgroundColor: '#6D0F0F', // Garante que a área segura tenha a cor do cabeçalho
     borderBottomRightRadius: 50, // Mantém o border radius na parte inferior direita da safeArea
-    top: 35,
+    top: 0,
   },
 
   header: {
