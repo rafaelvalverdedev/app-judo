@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   Image,
   ActivityIndicator,
+  RefreshControl,
 } from 'react-native';
 
 import GraduacaoJson from '../graduacao.json';
@@ -129,39 +130,60 @@ export default function Graduacao() {
   const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
   const [faixas, setFaixas] = useState<Faixa[]>([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string>('');
   
-  // Carregamento dos dados
-  useEffect(() => {
-    const carregarFaixas = async () => {
-      try {
+  // Função para carregar/recarregar dados
+  const carregarFaixas = useCallback(async (isRefresh = false) => {
+    try {
+      if (isRefresh) {
+        setRefreshing(true);
+      } else {
         setLoading(true);
-        setError('');
-        
-        // DESENVOLVIMENTO: Usar JSON local
-        setFaixas(GraduacaoJson as Faixa[]);
-        
-        // PRODUÇÃO: Descomentar para usar API       
-        const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json');
-        if (!response.ok) {
-          throw new Error('Erro ao carregar graduações');
-        }
-        const data = await response.json();
-        setFaixas(data as Faixa[]);
-        
-        
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Erro desconhecido');
-      } finally {
-        setLoading(false);
       }
-    };
+      setError('');
+      
+      // DESENVOLVIMENTO: Usar JSON local
+      setFaixas(GraduacaoJson as Faixa[]);
+      
+      // PRODUÇÃO: Descomentar para usar API
+      // const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json', {
+      //   // Adiciona cache-busting para garantir que sempre busque a versão mais recente
+      //   cache: 'no-cache',
+      //   headers: {
+      //     'Cache-Control': 'no-cache',
+      //   },
+      // });
+      
+      // if (!response.ok) {
+      //   throw new Error(`Erro ${response.status}: ${response.statusText}`);
+      // }
+      
+      // const data = await response.json();
+      // setFaixas(data as Faixa[]);
+      // PARA USAR EM PRODUÇÃO, DESCOMENTAR ATE AQUI
 
-    carregarFaixas();
+      
+      // Feedback visual para o usuário em caso de refresh
+      if (isRefresh) {
+        // Opcional: Adicionar uma pequena mensagem de sucesso
+        console.log('Graduações atualizadas com sucesso!');
+      }
+      
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
+      setError(errorMessage);
+      console.error('Erro ao carregar graduações:', errorMessage);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
   }, []);
-  
-  // Dados das faixas
-  // const faixas = GraduacaoJson as Faixa[];
+
+  // Carregamento inicial
+  useEffect(() => {
+    carregarFaixas(false);
+  }, [carregarFaixas]);
   
   // Callbacks otimizados
   const abrirModal = useCallback((faixa: Faixa) => {
@@ -174,8 +196,19 @@ export default function Graduacao() {
     setFaixaSelecionada(null);
   }, []);
 
+  // Função para Pull-to-Refresh
+  const onRefresh = useCallback(() => {
+    carregarFaixas(true);
+  }, [carregarFaixas]);
+
+  // Função para tentar novamente
+  const tentarNovamente = useCallback(() => {
+    setError('');
+    carregarFaixas(false);
+  }, [carregarFaixas]);
+
   // Validação de dados e estados de carregamento
-  if (loading) {
+  if (loading && !refreshing) {
     return (
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.centered}>
@@ -186,19 +219,15 @@ export default function Graduacao() {
     );
   }
 
-  if (error) {
+  if (error && !refreshing) {
     return (
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.centered}>
           <Text style={styles.errorText}>Erro: {error}</Text>
           <TouchableOpacity 
             style={styles.retryButton}
-            onPress={() => {
-              // Recarregar dados
-              setError('');
-              setLoading(true);
-              // Aqui você pode adicionar lógica para tentar novamente
-            }}
+            onPress={tentarNovamente}
+            activeOpacity={0.8}
           >
             <Text style={styles.retryButtonText}>Tentar novamente</Text>
           </TouchableOpacity>
@@ -210,9 +239,20 @@ export default function Graduacao() {
   if (!faixas || faixas.length === 0) {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <View style={styles.centered}>
+        <ScrollView
+          contentContainerStyle={styles.centered}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              colors={[COLORS.primary]}
+              tintColor={COLORS.primary}
+            />
+          }
+        >
           <Text style={styles.errorText}>Nenhuma graduação encontrada</Text>
-        </View>
+          <Text style={styles.refreshHint}>Arraste para baixo para tentar novamente</Text>
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -222,6 +262,16 @@ export default function Graduacao() {
       <ScrollView 
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={[COLORS.primary]}
+            tintColor={COLORS.primary}
+            title="Atualizando graduações..."
+            titleColor={COLORS.primary}
+          />
+        }
       >
         {/* Card principal com informações */}
         <View style={styles.cardPrincipal}>
@@ -246,6 +296,13 @@ export default function Graduacao() {
             <FaixaCard key={index} faixa={faixa} onPress={abrirModal} />
           ))}
         </View>
+
+        {/* Indicador de última atualização */}
+        <View style={styles.refreshIndicator}>
+          <Text style={styles.refreshText}>
+            Arraste para baixo para atualizar
+          </Text>
+        </View>
       </ScrollView>
 
       {/* Modal */}
@@ -263,19 +320,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
-
   scrollContent: {
     flexGrow: 1,
     paddingTop: 20,
     padding: 20,
   },
-
   containerCards: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
-
   cardPrincipal: {
     backgroundColor: COLORS.cardBackground,
     borderRadius: 12,
@@ -287,7 +341,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-
   card: {
     backgroundColor: COLORS.cardSecondary,
     borderRadius: 12,
@@ -300,17 +353,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-
   cardTouchable: {
     flex: 1,
     borderRadius: 12,
   },
-
   cardContent: {
     flex: 1,
     justifyContent: 'space-between',
   },
-  
   faixaContainer: {
     flexDirection: 'row',
     width: '100%',
@@ -320,11 +370,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     elevation: 2,
   },
-
   faixaParte: {
     height: '100%',
   },
-
   titulo: {
     fontSize: 24,
     fontFamily: 'Inter_700Bold',
@@ -333,14 +381,12 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     color: COLORS.text,
   },
-  
   cardTitulo: {
     fontSize: 18,
     fontFamily: 'Inter_700Bold',
     marginBottom: 8,
     color: COLORS.text,
   },
-
   subtitulo: {
     fontSize: 16,
     fontFamily: 'Inter_700Bold',
@@ -348,7 +394,6 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     color: COLORS.text,
   },
-
   descricao: {
     fontSize: 14,
     fontFamily: 'Inter_400Regular',
@@ -357,7 +402,6 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     textAlign: 'justify',
   },
-
   item: {
     fontSize: 13,
     fontFamily: 'Inter_400Regular',
@@ -366,7 +410,6 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     lineHeight: 18,
   },
-
   link: {
     color: COLORS.primary,
     marginTop: 12,
@@ -374,14 +417,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'right',
   },
-
   modalOverlay: {
     flex: 1,
     backgroundColor: COLORS.overlay,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   modalContainer: {
     backgroundColor: COLORS.white,
     width: '90%',
@@ -394,11 +435,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 8,
   },
-
   modalScrollContent: {
     paddingBottom: 20,
   },
-
   modalTitulo: {
     fontSize: 22,
     fontFamily: 'Inter_700Bold',
@@ -412,7 +451,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 12,
   },
-
   modalConteudo: {
     fontSize: 15,
     fontFamily: 'Inter_400Regular',
@@ -420,7 +458,6 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     textAlign: 'justify',
   },
-
   botaoFechar: {
     marginTop: 24,
     alignSelf: 'flex-end',
@@ -430,13 +467,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 2,
   },
-
   botaoFecharTexto: {
     color: COLORS.white,
     fontWeight: 'bold',
     fontSize: 14,
   },
-
   centered: {
     flex: 1,
     justifyContent: 'center',
@@ -449,7 +484,6 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     textAlign: 'center',
   },
-
   loadingText: {
     fontSize: 16,
     fontFamily: 'Inter_400Regular',
@@ -457,18 +491,36 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 12,
   },
-
   retryButton: {
     marginTop: 20,
     paddingHorizontal: 20,
     paddingVertical: 12,
     backgroundColor: COLORS.primary,
     borderRadius: 8,
+    elevation: 2,
   },
-  
   retryButtonText: {
     color: COLORS.white,
     fontWeight: 'bold',
     fontSize: 14,
+  },
+  refreshIndicator: {
+    alignItems: 'center',
+    paddingVertical: 20,
+    marginTop: 10,
+  },
+  refreshText: {
+    fontSize: 12,
+    fontFamily: 'Inter_400Regular',
+    color: COLORS.text,
+    opacity: 0.6,
+  },
+  refreshHint: {
+    fontSize: 14,
+    fontFamily: 'Inter_400Regular',
+    color: COLORS.text,
+    textAlign: 'center',
+    marginTop: 12,
+    opacity: 0.7,
   },
 });
