@@ -105,6 +105,7 @@ export default function TabNavigator() {
 
             return (
               <Animatable.View
+
                 key={focused.toString() + route.name} // força recriação para bounceIn
                 animation={focused
                   ? {

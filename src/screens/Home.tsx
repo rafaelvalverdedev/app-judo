@@ -110,18 +110,21 @@ export default function Home() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1, // Permite que a SafeAreaView ocupe todo o espaço disponível
+    
   },
 
   scrollContent: {
     flexGrow: 1, // Permite que o conteúdo do ScrollView se expanda
     paddingTop: 45,
     paddingBottom: 70,
+    
   },
-  
+
   container: {
     flex: 1, // Opcional, dependendo do seu layout
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
 
   title: {
