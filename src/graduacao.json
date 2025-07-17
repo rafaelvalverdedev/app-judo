@@ -13,7 +13,7 @@
   },
   {
     "cor": "#FFFFFF",
-    "ponteira": "#9b9494",
+    "ponteira": "#7a7772",
     "nome": "Faixa Branca / Cinza",
     "requisitos": [
       "11º kyu",
@@ -25,8 +25,8 @@
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
-    "cor": "#9b9494",
-    "ponteira": "#9b9494",
+    "cor": "#7a7772",
+    "ponteira": "#7a7772",
     "nome": "Faixa Cinza",
     "requisitos": [
       "10º kyu",
@@ -38,8 +38,8 @@
   },
   {
     "cor": "#9b9494",
-    "ponteira": "blue",
-    "nome": "Faixa Cinza / Azul",
+    "ponteira": "#0645cf",
+    "nome": "Cinza / Azul",
     "requisitos": [
       "9º kyu",
       "Idade mínima: 6 anos",
@@ -50,8 +50,8 @@
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
-    "cor": "blue",
-    "ponteira": "blue",
+    "cor": "#0645cf",
+    "ponteira": "#0645cf",
     "nome": "Faixa Azul",
     "requisitos": [
       "8º kyu",
@@ -62,9 +62,9 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "blue",
+    "cor": "#0645cf",
     "ponteira": "yellow",
-    "nome": "Faixa Azul / Amarela",
+    "nome": "Azul / Amarela",
     "requisitos": [
       "7º kyu",
       "Idade mínima: 8 anos",
@@ -87,7 +87,7 @@
   },
   {
     "cor": "yellow",
-    "ponteira": "#ff6600",
+    "ponteira": "#ff8107",
     "nome": "Amarela / Laranja",
     "requisitos": [
       "5º kyu",
@@ -98,8 +98,8 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "#ff6600",
-    "ponteira": "#ff6600",
+    "cor": "#ff8100",
+    "ponteira": "#ff8100",
     "nome": "Faixa Laranja",
     "requisitos": [
       "4º kyu",
@@ -135,7 +135,7 @@
   },
   {
     "cor": "#41361a",
-    "ponteira": "#41361a",      
+    "ponteira": "#41361a",
     "nome": "Faixa Marrom",
     "requisitos": [
       "1º kyu",
@@ -147,7 +147,7 @@
   },
   {
     "cor": "#000000",
-    "ponteira": "#000000",         
+    "ponteira": "#000000",
     "nome": "Faixa Preta",
     "requisitos": [
       "1º dan",
