@@ -17,6 +17,7 @@ import GraduacaoJson from '../graduacao.json'; // Adjust path as needed
 // Import the separated components
 import { FaixaCard, FaixaModal } from './graduacoes'; // Using the index.ts export
 
+
 // Tipos (can be in a global types file or defined here if only used in this file)
 interface Faixa {
   cor: string;
@@ -30,7 +31,7 @@ interface Faixa {
 
 // Componente principal
 export default function Graduacao() {
-  
+
   const [modalVisible, setModalVisible] = useState(false);
   const [faixaSelecionada, setFaixaSelecionada] = useState<Faixa | null>(null);
   const [faixas, setFaixas] = useState<Faixa[]>([]);
@@ -180,6 +181,7 @@ export default function Graduacao() {
               key={index}
               faixa={faixa}
               onPress={abrirModal}
+              index={index} // <<< isso é importante
             />
           ))}
         </View>
@@ -255,20 +257,13 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
 
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  
   errorText: {
     fontSize: 16,
     fontFamily: 'Inter_400Regular',
     color: COLORS.text,
     textAlign: 'center',
   },
-  
+
   loadingText: {
     fontSize: 16,
     fontFamily: 'Inter_400Regular',
