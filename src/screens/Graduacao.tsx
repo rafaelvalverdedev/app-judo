@@ -116,7 +116,7 @@ export default function Graduacao() {
   if (loading && !refreshing) {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <View style={styles.centered}>
+        <View>
           <ActivityIndicator size="large" color={COLORS.primary} />
           <Text style={styles.loadingText}>Carregando graduações...</Text>
         </View>
@@ -127,7 +127,7 @@ export default function Graduacao() {
   if (error && !refreshing) {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <View style={styles.centered}>
+        <View>
           <Text style={styles.errorText}>Erro: {error}</Text>
           <TouchableOpacity
             style={styles.retryButton}

@@ -18,11 +18,10 @@ const FaixaVisualizacao = ({ cor, ponteira }: FaixaVisualizacaoProps) => (
 const styles = StyleSheet.create({
   faixaContainer: {
     flexDirection: 'row',
-    width: '100%',
-    height: 6,
+    width: '80%',
+    height: 8,
     borderRadius: 6,
     overflow: 'hidden',
-    marginBottom: 12,
     elevation: 2,
   },
 
