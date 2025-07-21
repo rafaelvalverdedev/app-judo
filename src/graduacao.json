@@ -14,11 +14,11 @@
   {
     "cor": "#FFFFFF",
     "ponteira": "#7a7772",
-    "nome": "Faixa Branca / Cinza",
+    "nome": "Branca / Cinza",
     "requisitos": [
       "11º kyu",
       "Idade mínima: 4 anos",
-      "Carência mínima: - 3 meses"
+      "Carência mínima: 3 meses"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=video1",
     "imagem": "https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/assets/faixas.png",
@@ -38,7 +38,7 @@
   },
   {
     "cor": "#9b9494",
-    "ponteira": "#0645cf",
+    "ponteira": "#0136af",
     "nome": "Cinza / Azul",
     "requisitos": [
       "9º kyu",
@@ -50,8 +50,8 @@
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
-    "cor": "#0645cf",
-    "ponteira": "#0645cf",
+    "cor": "#0136af",
+    "ponteira": "#0136af",
     "nome": "Faixa Azul",
     "requisitos": [
       "8º kyu",
@@ -63,7 +63,7 @@
   },
   {
     "cor": "#0645cf",
-    "ponteira": "yellow",
+    "ponteira": "#fbe734",
     "nome": "Azul / Amarela",
     "requisitos": [
       "7º kyu",
@@ -74,8 +74,8 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "yellow",
-    "ponteira": "yellow",
+    "cor": "#fbe734",
+    "ponteira": "#fbe734",
     "nome": "Amarela",
     "requisitos": [
       "6º kyu",
@@ -86,8 +86,8 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "yellow",
-    "ponteira": "#ff8107",
+    "cor": "#fbe734",
+    "ponteira": "#fc4a1a",
     "nome": "Amarela / Laranja",
     "requisitos": [
       "5º kyu",
@@ -98,8 +98,8 @@
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
-    "cor": "#ff8100",
-    "ponteira": "#ff8100",
+    "cor": "#fc4a1a",
+    "ponteira": "#fc4a1a",
     "nome": "Faixa Laranja",
     "requisitos": [
       "4º kyu",
@@ -134,8 +134,8 @@
     "descricao": "A Faixa Roxa destaca o judoca como intermediário-avançado, dominando diversas técnicas e já auxiliando colegas iniciantes."
   },
   {
-    "cor": "#41361a",
-    "ponteira": "#41361a",
+    "cor": "#562e19",
+    "ponteira": "#562e19",
     "nome": "Faixa Marrom",
     "requisitos": [
       "1º kyu",
@@ -146,8 +146,8 @@
     "descricao": "A Faixa Marrom antecede a faixa preta. O judoca tem sólida base técnica, preparo físico e compreensão do espírito do judô."
   },
   {
-    "cor": "#000000",
-    "ponteira": "#000000",
+    "cor": "#060606",
+    "ponteira": "#060606",
     "nome": "Faixa Preta",
     "requisitos": [
       "1º dan",

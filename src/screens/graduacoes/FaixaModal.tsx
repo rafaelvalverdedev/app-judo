@@ -2,8 +2,11 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { COLORS } from '../../layout'; // Adjust path as needed
+import FaixaVisualizacao from './FaixaVisualizacao';
 
 import FaixaBranca from './ModalFaixaBranca'; // Adjust path as needed
+import FaixaCinza from './ModalFaixaCinza'; // Adjust path as needed
+
 
 // Tipos (assuming Faixa is defined elsewhere or imported)
 interface Faixa {
@@ -25,8 +28,8 @@ interface FaixaModalProps {
 // Map of specific content components for each belt
 const faixaComponents: { [nome: string]: React.ComponentType } = {
   'Faixa Branca': FaixaBranca,
+  'Faixa Cinza': FaixaCinza,
   // Add other specific belt components here
-  // 'Cinza': FaixaCinza,
   // 'Amarela': FaixaAmarela,
 };
 
@@ -44,6 +47,9 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
     >
       <View style={styles.modalOverlay}>
         <View style={styles.modalContainer}>
+          <View style={styles.faixaContainer}>
+            <FaixaVisualizacao cor={faixa.cor} ponteira={faixa.ponteira} />
+          </View>
           <Text style={styles.modalTitulo}>{faixa.nome}</Text>
           <ScrollView contentContainerStyle={styles.modalScrollContent}>
             {/* Renderiza componente específico da faixa */}
@@ -75,35 +81,39 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   modalContainer: {
     backgroundColor: COLORS.white,
     width: '90%',
-    maxHeight: '80%',
+    maxHeight: '90%',
     borderRadius: 16,
-    padding: 24,
+    padding: 16,
     elevation: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.5,
     shadowRadius: 8,
   },
+
   modalScrollContent: {
     paddingBottom: 20,
   },
+
   modalTitulo: {
-    fontSize: 22,
-    fontFamily: 'Inter_700Bold',
-    marginBottom: 20,
     textAlign: 'center',
-    color: COLORS.text,
+    marginBottom: 6,
+    fontSize: 21,
+    fontWeight: 'bold',
+    color: '#333333',
   },
+
   modalConteudo: {
-    fontSize: 15,
-    fontFamily: 'Inter_400Regular',
+    fontSize: 18,
     lineHeight: 24,
-    color: COLORS.text,
+    color: "#333333",
     textAlign: 'justify',
   },
+
   botaoFechar: {
     marginTop: 24,
     alignSelf: 'flex-end',
@@ -117,6 +127,12 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontWeight: 'bold',
     fontSize: 14,
+  },
+
+  faixaContainer: {
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

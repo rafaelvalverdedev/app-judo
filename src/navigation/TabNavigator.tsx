@@ -35,23 +35,21 @@ export default function TabNavigator() {
           // Header personalizado
           header: () => {
             return (
-              // SafeAreaView para garantir que o cabeçalho esteja abaixo da barra de status
-              <SafeAreaView style={styles.safeArea}>
-                <LinearGradient
-                  colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                  style={styles.header}
-                >
-                  {route.name === 'Início' && (
-                    <Image style={styles.headerLogo}
-                      source={require('../../assets/logo/logo.png')}
-                      resizeMode="cover"
-                    />
-                  )}
-                  <Text style={styles.headerTitle}>
-                    {TITULOS[route.name] || route.name.toUpperCase()}
-                  </Text>
-                </LinearGradient>
-              </SafeAreaView>
+              <LinearGradient
+                colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                style={styles.header}
+              >
+                {route.name === 'Início' && (
+                  <Image style={styles.headerLogo}
+                    source={require('../../assets/logo/logo.png')}
+                    resizeMode="cover"
+                  />
+                )}
+                <Text style={styles.headerTitle}>
+                  {TITULOS[route.name] || route.name.toUpperCase()}
+                </Text>
+              </LinearGradient>
+
             );
           },
 
@@ -105,7 +103,6 @@ export default function TabNavigator() {
 
             return (
               <Animatable.View
-
                 key={focused.toString() + route.name} // força recriação para bounceIn
                 animation={focused
                   ? {
@@ -136,13 +133,6 @@ export default function TabNavigator() {
 }
 
 const styles = StyleSheet.create({
-  // Estilo para a SafeAreaView que envolve o cabeçalho
-  safeArea: {
-    backgroundColor: '#6D0F0F', // Garante que a área segura tenha a cor do cabeçalho
-    borderBottomRightRadius: 50, // Mantém o border radius na parte inferior direita da safeArea
-    top: 0,
-  },
-
   header: {
     flexDirection: 'row',
     alignItems: 'center',
