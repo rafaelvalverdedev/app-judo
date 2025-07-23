@@ -10,6 +10,8 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
 import { COLORS } from '../layout'; // Adjust path as needed
 
 import GraduacaoJson from '../graduacao.json'; // Adjust path as needed
@@ -153,23 +155,29 @@ export default function Graduacao() {
       }
     >
       {/* Card principal com informações */}
-      <View style={styles.cardPrincipal}>
-        <Text style={styles.titulo}>
-          O Judô é uma arte marcial que valoriza a disciplina, o respeito e o aprendizado contínuo.
-        </Text>
+      <LinearGradient colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}>
+        <View style={styles.cardPrincipal}>
+          <Text style={styles.titulo}>
+            O Judô é uma arte marcial que valoriza a disciplina, o respeito e o aprendizado contínuo.
+          </Text>
 
-        <Text style={styles.subtitulo}>O que são as graduações?</Text>
-        <Text style={styles.descricao}>
-          A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e o tempo de prática de cada judoca.
-        </Text>
+          <Text style={styles.subtitulo}>O que são as graduações?</Text>
+          <Text style={styles.descricao}>
+            A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e o tempo de prática de cada judoca.
+          </Text>
 
-        <Text style={styles.subtitulo}>Como funciona a progressão?</Text>
-        <Text style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Text>
-        <Text style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Text>
-        <Text style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Text>
-      </View>
+          <Text style={styles.subtitulo}>Como funciona a progressão?</Text>
+          <Text style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Text>
+          <Text style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Text>
+          <Text style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Text>
+        </View>
+        <View><Text></Text></View>
+        <View><Text></Text></View>
+        <View style={styles.bottomCard}><Text></Text></View>
+      </LinearGradient>
 
       {/* Container dos cards de faixas */}
+
       <View style={styles.containerCards}>
         {faixas.map((faixa, index) => (
           <FaixaCard
@@ -196,72 +204,54 @@ export default function Graduacao() {
 const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
-    backgroundColor: '#transparent',
-    padding: 10,
   },
-
+  
   cardPrincipal: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 15,
-    marginBottom: 15,
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 4,
+    margin: 10,
   },
-
+  
   containerCards: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
-
+  
   titulo: {
-    fontSize: 18,
     marginBottom: 8,
-    textAlign: 'justify',
     lineHeight: 32,
-    color: COLORS.text,
+    color: '#fff',
   },
 
   subtitulo: {
-    fontSize: 16,
     marginTop: 12,
     marginBottom: 6,
-    color: COLORS.text,
+    color: '#fff',
   },
 
   descricao: {
-    fontSize: 14,
     lineHeight: 20,
     marginBottom: 8,
-    color: COLORS.text,
-    textAlign: 'justify',
+    color: '#fff',
   },
 
   item: {
-    fontSize: 13,
     marginLeft: 10,
     marginTop: 4,
-    color: COLORS.text,
     lineHeight: 18,
+    color: '#fff',
   },
 
   errorText: {
-    fontSize: 16,
     color: COLORS.text,
     textAlign: 'center',
   },
 
   loadingText: {
-    fontSize: 16,
-    fontFamily: 'Inter_400Regular',
     color: COLORS.text,
     textAlign: 'center',
     marginTop: 12,
   },
+
   retryButton: {
     marginTop: 20,
     paddingHorizontal: 20,
@@ -270,29 +260,46 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 2,
   },
+
   retryButtonText: {
     color: COLORS.white,
     fontWeight: 'bold',
     fontSize: 14,
   },
+
   refreshIndicator: {
     alignItems: 'center',
     paddingVertical: 20,
     marginTop: 10,
   },
+
   refreshText: {
-    fontSize: 12,
-    fontFamily: 'Inter_400Regular',
-    color: COLORS.text,
     opacity: 0.6,
   },
+
   refreshHint: {
-    fontSize: 14,
-    fontFamily: 'Inter_400Regular',
-    color: COLORS.text,
     textAlign: 'center',
     marginTop: 12,
     opacity: 0.7,
+  },
+
+  bottomCard: {
+    position: 'absolute',
+    bottom: -20,
+    alignSelf: 'center',
+    backgroundColor: '#f6f6f6',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    minWidth: '100%', // para garantir a largura mínima visual
+    alignItems: 'center',
   },
 
 });

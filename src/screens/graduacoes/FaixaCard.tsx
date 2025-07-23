@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import FaixaVisualizacao from './FaixaVisualizacao';
 
 interface Faixa {
   cor: string;
@@ -18,6 +17,7 @@ interface FaixaCardProps {
   onPress: (faixa: Faixa) => void;
   index: number;
 }
+
 
 const gradientes: [string, string][] = [
   ['#ffffff', '#d8d6d6'],
@@ -68,79 +68,115 @@ const coresTexto: string[] = [
   '#9e9e9e',
 ];
 
-
+const imagemFaixa: any[] = [
+  require('../../../assets/faixas/branca.png'),
+  require('../../../assets/faixas/branca-cinza.png'),
+  require('../../../assets/faixas/cinza.png'),
+  require('../../../assets/faixas/cinza-azul.png'),
+  require('../../../assets/faixas/azul.png'),
+  require('../../../assets/faixas/azul-amarela.png'),
+  require('../../../assets/faixas/amarela.png'),
+  require('../../../assets/faixas/amarela-laranja.png'),
+  require('../../../assets/faixas/laranja.png'),
+  require('../../../assets/faixas/verde.png'),
+  require('../../../assets/faixas/roxa.png'),
+  require('../../../assets/faixas/marrom.png'),
+  require('../../../assets/faixas/preta.png'),
+];
 
 const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
   const gradiente = gradientes[index % gradientes.length];
   const corTexto = coresTexto[index % coresTexto.length];
+  const imagemFaixas = imagemFaixa[index % imagemFaixa.length];
 
   return (
-    <View
-      style={styles.cardContainer}
-    >
-      <LinearGradient
-        style={styles.cardContainerLinear}
-        colors={gradiente}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      >
-        <TouchableOpacity
-          onPress={() => onPress(faixa)}
-          accessibilityLabel={`Abrir detalhes da faixa ${faixa.nome}`}
-          accessibilityHint="Toque para ver mais informações sobre esta graduação"
-          activeOpacity={0.8}
-        >
-          <View style={styles.faixaContainer}>
-            <FaixaVisualizacao cor={faixa.cor} ponteira={faixa.ponteira} />
-          </View>
+    <View style={styles.card}>
+      {/* Topo com fundo gradiente curvo */}
+      <TouchableOpacity onPress={() => onPress(faixa)}>
+        <View style={styles.topContainer}>
+          <LinearGradient
+            // style={styles.cardContainerLinear}
+            colors={gradiente}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.topGradient}
+          >
 
-          <View >
+            <Image
+              source={imagemFaixas}
+              style={styles.iconImage}
+              resizeMode="contain"
+            />
+
             <Text style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Text>
 
-            {faixa.requisitos?.map((item, idx) => (
-              <Text key={idx} style={[styles.item, { color: corTexto }]}>• {item}</Text>
-            ))}
+          </LinearGradient>
+        </View>
 
-            <Text style={[styles.link, { color: corTexto }]}>[ Mais + ]</Text>
+        {/* Conteúdo */}
+        <View style={styles.content}>
+          <Text style={styles.description}>{faixa.descricao}</Text>
 
-          </View>
-        </TouchableOpacity>
-      </LinearGradient>
-    </View>
+          {/* Botão */}
+          <Text style={styles.link}>[ Mais + ]</Text>
+        </View>
+      </TouchableOpacity>
+    </View >
   );
 };
 
 const styles = StyleSheet.create({
-  cardContainer: {
-    width: '100%',
-    marginBottom: 15,
+  card: {
+    width: '45%',
     borderRadius: 16,
-  },
-
-  cardContainerLinear: {
-    flex: 1,
-    borderRadius: 16,
-    padding: 10,
+    backgroundColor: '#fff',
+    overflow: 'hidden',
     elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    minHeight: 160,
-    borderWidth: 0.5,
-    borderColor: 'rgba(0,0,0,0.1)',
+    margin: 10,
   },
 
-  faixaContainer: {
-    margin: 10,
+  topContainer: {
+    height: 110,
+    overflow: 'hidden',
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+  },
+
+  topGradient: {
+    flex: 1,
+    borderBottomRightRadius: 85,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
+  content: {
+    padding: 16,
+  },
+
+  title: {
+    fontSize: 20,
+    fontWeight: '700',
+    marginBottom: 8,
+    color: '#444',
+  },
+
+  description: {
+    fontSize: 14,
+    color: '#666',
+
+    marginBottom: 16,
+  },
+
+  iconImage: {
+    width: 60,
+    height: 60,
+    margin: -15,
+  },
+
   titulo: {
-    textAlign: 'center',
+
     marginBottom: 6,
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
   },
 
@@ -155,7 +191,6 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginTop: 10,
   },
-
 
 });
 
