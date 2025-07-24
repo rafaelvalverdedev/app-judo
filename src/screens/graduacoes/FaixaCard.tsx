@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Texto } from '../../components/Texto'; // Adjust the import path as needed
+import { FONT_SIZE } from '../../theme/theme';
 
 interface Faixa {
   cor: string;
@@ -23,8 +25,8 @@ const gradientes: [string, string][] = [
   ['#ffffff', '#d8d6d6'],
   ['#ffffff', '#d8d6d6'],
 
-  ['#DCDCDC', '#A9A9A9'],
-  ['#DCDCDC', '#A9A9A9'],
+  ['#DCDCDC', '#9c9c9c'],
+  ['#DCDCDC', '#9c9c9c'],
 
   ['#22abfa', '#0136af'],
   ['#22abfa', '#0136af'],
@@ -45,14 +47,14 @@ const gradientes: [string, string][] = [
 
 
 const coresTexto: string[] = [
-  '#666666',
-  '#666666',
+  '#888888',
+  '#888888',
 
-  '#333333',
-  '#333333',
+  '#555555',
+  '#555555',
 
-  '#99cce9',
-  '#99cce9',
+  '#163379',
+  '#163379',
 
   '#aa731b',
   '#aa731b',
@@ -108,17 +110,18 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
               resizeMode="contain"
             />
 
-            <Text style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Text>
+            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Texto>
 
           </LinearGradient>
         </View>
 
         {/* Conteúdo */}
         <View style={styles.content}>
-          <Text style={styles.description}>{faixa.descricao}</Text>
+          <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
+          <Texto style={styles.description}>{faixa.descricao}</Texto>
 
           {/* Botão */}
-          <Text style={styles.link}>[ Mais + ]</Text>
+          <Texto style={styles.link}>[ Mais + ]</Texto>
         </View>
       </TouchableOpacity>
     </View >
@@ -136,7 +139,7 @@ const styles = StyleSheet.create({
   },
 
   topContainer: {
-    height: 110,
+    height: 100,
     overflow: 'hidden',
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
@@ -150,22 +153,28 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    padding: 16,
+    padding: 10,
   },
 
   title: {
-    fontSize: 20,
     fontWeight: '700',
     marginBottom: 8,
     color: '#444',
   },
 
   description: {
-    fontSize: 14,
     color: '#666',
-
-    marginBottom: 16,
+    margin: 5,
+    textAlign: 'justify',
   },
+
+  requisitos: {
+    color: '#888',
+    marginBottom: 16,
+    marginLeft: 10,
+    textAlign: 'left',
+  },
+
 
   iconImage: {
     width: 60,
@@ -174,22 +183,19 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-
     marginBottom: 6,
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: FONT_SIZE.medium2,
   },
 
   item: {
-    fontSize: 16,
     marginLeft: 10,
     marginBottom: 2,
   },
 
   link: {
-    fontSize: 12,
     textAlign: 'right',
     marginTop: 10,
+    fontSize: 12,
   },
 
 });

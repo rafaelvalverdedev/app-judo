@@ -55,7 +55,8 @@ export default function Graduacao() {
       // DESENVOLVIMENTO: Usar JSON local
       setFaixas(GraduacaoJson as Faixa[]);
 
-      // PRODUÇÃO: Descomentar para usar API
+      //PRODUÇÃO: Descomentar para usar API
+      // ***
       // const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json', {
       //   // Adiciona cache-busting para garantir que sempre busque a versão mais recente
       //   cache: 'no-cache',
@@ -70,7 +71,8 @@ export default function Graduacao() {
 
       // const data = await response.json();
       // setFaixas(data as Faixa[]);
-      // PARA USAR EM PRODUÇÃO, DESCOMENTAR ATE AQUI
+      // ******
+      //PARA USAR EM PRODUÇÃO, DESCOMENTAR ATE AQUI
 
       // Feedback visual para o usuário em caso de refresh
       if (isRefresh) {
@@ -220,28 +222,20 @@ const styles = StyleSheet.create({
   },
   
   titulo: {
-    marginBottom: 8,
-    lineHeight: 32,
     color: '#fff',
   },
 
   subtitulo: {
-    marginTop: 12,
-    marginBottom: 6,
     color: '#fff',
   },
 
   descricao: {
-    lineHeight: 20,
-    marginBottom: 8,
     color: '#fff',
   },
 
   item: {
-    marginLeft: 10,
-    marginTop: 4,
-    lineHeight: 18,
     color: '#fff',
+    fontSize: FONT_SIZE.small,
   },
 
   errorText: {

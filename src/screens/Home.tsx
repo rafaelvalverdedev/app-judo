@@ -129,12 +129,10 @@ const styles = StyleSheet.create({
   
   
   title: { 
-    fontSize: 24,
     color: COLORS.primary,
   },
 
   paragraph: {
-    fontSize: 16,
     textAlign: 'center',
   },
 });

@@ -1,22 +1,3 @@
-// // App.tsx
-// import React from 'react';
-// import { SafeAreaProvider } from 'react-native-safe-area-context';
-// import { NavigationContainer } from '@react-navigation/native';
-// import TabNavigator from './src/navigation/TabNavigator';
-
-// export default function App() {
-
-//   return (
-//     <SafeAreaProvider>
-//       <NavigationContainer>
-//         <TabNavigator />
-//       </NavigationContainer>
-//     </SafeAreaProvider>
-//   );
-
-// }
-
-
 // App.tsx
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -33,6 +14,11 @@ export default function App() {
     'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
     'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
     'BitcountPropSingle': require('./assets/fonts/BitcountPropSingle-Medium.ttf'),
+
+    'DMSans-Bold': require('./assets/fonts/DMSans-Bold.ttf'),
+    'DMSans-Regular': require('./assets/fonts/DMSans-Regular.ttf'),
+    'DMSans-Medium': require('./assets/fonts/DMSans-Medium.ttf'),
+    'DMSans-ExtraBold': require('./assets/fonts/DMSans-ExtraBold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {

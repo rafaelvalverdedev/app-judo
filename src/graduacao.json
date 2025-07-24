@@ -4,11 +4,11 @@
     "ponteira": "#FFFFFF",
     "nome": "Faixa Branca",
     "requisitos": [
-      "Iniciante",
+      "Iniciante \n",
       "Sem idade mínima"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video1",
-    "imagem": "https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/assets/faixas.png",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
@@ -16,12 +16,12 @@
     "ponteira": "#7a7772",
     "nome": "Branca / Cinza",
     "requisitos": [
-      "11º kyu",
-      "Idade mínima: 4 anos",
-      "Carência mínima: 3 meses"
+      "11º kyu \n",
+      "Idade mínima: 4 anos \n",
+      "Carência: 3 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video1",
-    "imagem": "https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/assets/faixas.png",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
@@ -29,11 +29,12 @@
     "ponteira": "#7a7772",
     "nome": "Faixa Cinza",
     "requisitos": [
-      "10º kyu",
-      "Idade mínima: 5 anos",
-      "Carência mínima: 3 meses"
+      "10º kyu \n",
+      "Idade mínima: 5 anos \n",
+      "Carência: 3 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video1",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Cinza representa a progressão inicial da criança. Aqui o judoca já começa a entender quedas básicas e respeito com o colega."
   },
   {
@@ -41,12 +42,12 @@
     "ponteira": "#0136af",
     "nome": "Cinza / Azul",
     "requisitos": [
-      "9º kyu",
-      "Idade mínima: 6 anos",
-      "Carência mínima: 6 meses"
+      "9º kyu \n",
+      "Idade mínima: 6 anos \n",
+      "Carência: 6 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video1",
-    "imagem": "https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/assets/faixas.png",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
   },
   {
@@ -54,11 +55,12 @@
     "ponteira": "#0136af",
     "nome": "Faixa Azul",
     "requisitos": [
-      "8º kyu",
-      "Idade mínima: 7 anos",
-      "Carência mínima: 6 meses"
+      "8º kyu \n",
+      "Idade mínima: 7 anos \n",
+      "Carência: 6 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video2",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
@@ -66,11 +68,12 @@
     "ponteira": "#fbe734",
     "nome": "Azul / Amarela",
     "requisitos": [
-      "7º kyu",
-      "Idade mínima: 8 anos",
-      "Carência mínima: 6 meses"
+      "7º kyu \n",
+      "Idade mínima: 8 anos \n",
+      "Carência: 6 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video2",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
@@ -78,11 +81,12 @@
     "ponteira": "#fbe734",
     "nome": "Amarela",
     "requisitos": [
-      "6º kyu",
-      "Idade mínima: 9 anos",
-      "Carência mínima: 6 meses"
+      "6º kyu \n",
+      "Idade mínima: 9 anos \n",
+      "Carência: 6 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video2",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
@@ -90,11 +94,12 @@
     "ponteira": "#fc4a1a",
     "nome": "Amarela / Laranja",
     "requisitos": [
-      "5º kyu",
-      "Idade mínima: 10 anos",
-      "Carência mínima: 12 meses"
+      "5º kyu \n",
+      "Idade mínima: 10 anos \n",
+      "Carência: 12 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video2",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
   },
   {
@@ -102,11 +107,12 @@
     "ponteira": "#fc4a1a",
     "nome": "Faixa Laranja",
     "requisitos": [
-      "4º kyu",
-      "Idade mínima: 11 anos",
-      "Carência mínima: 12 meses"
+      "4º kyu \n",
+      "Idade mínima: 11 anos \n",
+      "Carência: 12 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
   },
   {
@@ -114,11 +120,12 @@
     "ponteira": "#1e4b19",
     "nome": "Faixa Verde",
     "requisitos": [
-      "3º kyu",
-      "Idade mínima: 12 anos",
-      "Carência mínima: 12 meses"
+      "3º kyu \n",
+      "Idade mínima: 12 anos \n",
+      "Carência: 12 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
   },
   {
@@ -126,11 +133,12 @@
     "ponteira": "#50226e",
     "nome": "Faixa Roxa",
     "requisitos": [
-      "2º kyu",
-      "Idade mínima: 13 anos",
-      "Carência mínima: 12 meses"
+      "2º kyu \n",
+      "Idade mínima: 13 anos \n",
+      "Carência: 12 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Roxa destaca o judoca como intermediário-avançado, dominando diversas técnicas e já auxiliando colegas iniciantes."
   },
   {
@@ -138,11 +146,12 @@
     "ponteira": "#562e19",
     "nome": "Faixa Marrom",
     "requisitos": [
-      "1º kyu",
-      "Idade mínima: 14 anos",
-      "Carência mínima: 12 meses"
+      "1º kyu \n",
+      "Idade mínima: 14 anos \n",
+      "Carência: 12 meses"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Marrom antecede a faixa preta. O judoca tem sólida base técnica, preparo físico e compreensão do espírito do judô."
   },
   {
@@ -150,11 +159,12 @@
     "ponteira": "#060606",
     "nome": "Faixa Preta",
     "requisitos": [
-      "1º dan",
-      "Idade mínima: 16 anos",
-      "Carência mínima: 2 anos"
+      "1º dan \n",
+      "Idade mínima: 16 anos \n",
+      "Carência: 2 anos"
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=video3",
+    "videoUrl": "",
+    "imagem": "",
     "descricao": "A Faixa Preta não representa o fim, mas o verdadeiro começo do judô. Aqui o judoca se torna responsável por ensinar e evoluir constantemente."
   }
 ]

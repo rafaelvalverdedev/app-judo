@@ -15,13 +15,19 @@ export const FONT_FAMILY = {
   bold: 'Roboto-Bold',
   medium: 'Roboto-Medium',
   BitcountPropSingle: 'BitcountPropSingle',
+
+  DMSansRegular:  'DMSans-Regular',
+  DMSansBold: 'DMSans-Bold',
+  DMSansMedium: 'DMSans-Medium',
+  DMSansExtraBold: 'DMSans-ExtraBold',
 };
 
 export const FONT_SIZE = {
   small: 12,
   medium: 16,
-  large: 20,
-  xlarge: 24,
+  medium2: 22,  
+  large: 24,
+  xlarge: 28,
 };
 
 export const SPACING = {
@@ -30,10 +36,4 @@ export const SPACING = {
   md: 16,
   lg: 24,
   xl: 32,
-};
-
-export const RADIUS = {
-  sm: 4,
-  md: 8,
-  lg: 16,
 };

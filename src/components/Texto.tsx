@@ -8,7 +8,7 @@ export function Texto({ style, ...rest }: TextProps) {
       {...rest}
       style={[
         {
-          fontFamily: FONT_FAMILY.BitcountPropSingle,
+          fontFamily: FONT_FAMILY.DMSansRegular,
           fontSize: FONT_SIZE.medium,
           color: COLORS.text,
         },

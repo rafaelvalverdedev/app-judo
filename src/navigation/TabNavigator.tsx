@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native'; // Importe StatusBar e SafeAreaView
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../components/Texto';
+import { COLORS, FONT_SIZE, FONT_FAMILY } from '../theme/theme';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -108,14 +109,14 @@ export default function TabNavigator() {
                 animation={focused
                   ? {
                     0: { transform: [{ scale: 1 }] },
-                    0.5: { transform: [{ scale: 1.25 }] }, // Ajustado para 1.25 para um salto mais sutil
+                    0.5: { transform: [{ scale: 1.25 }] },
                     1: { transform: [{ scale: 1 }] },
                   }
                   : undefined
                 }
                 iterationCount={focused ? 'infinite' : 1} // 'infinite' para focado, 1 para desfocado
-                duration={1000} // <-- **MUDE AQUI: Duração de 1 segundo (1000ms)**
-                useNativeDriver // <-- **ADICIONE AQUI: Para melhor desempenho da animação**
+                duration={1000}
+                useNativeDriver
               >
                 <Ionicons name={iconName} style={iconStyle} />
               </Animatable.View>
@@ -140,25 +141,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingHorizontal: 20,
     height: 80, // Altura ajustada para compensar o padding da SafeAreaView
-    // paddingTop foi removido aqui, pois a SafeAreaView lida com isso
   },
-
+  
   headerTitle: {
+    fontSize: FONT_SIZE.xlarge,
     position: 'relative',
     color: '#FFFFFF',
-    fontSize: 20,
   },
 
   headerLogo: {
     position: 'relative',
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     margin: 10,
   },
 
   iconFocused: {
-    color: '#A81412',
     fontSize: 22,
+    color: '#A81412',
   },
 
   iconUnfocused: {
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
   },
 
   textFocused: {
+    fontSize: 16,
     color: '#A81412',
-    fontSize: 14,
   },
 
   textUnfocused: {
