@@ -14,6 +14,7 @@ export const FONT_FAMILY = {
   regular: 'Roboto-Regular',
   bold: 'Roboto-Bold',
   medium: 'Roboto-Medium',
+  BitcountPropSingle: 'BitcountPropSingle',
 };
 
 export const FONT_SIZE = {

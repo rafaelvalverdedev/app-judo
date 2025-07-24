@@ -11,8 +11,9 @@ import {
   RefreshControl,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Texto } from '../components/Texto';
 
-import { COLORS } from '../layout'; // Adjust path as needed
+import { COLORS, FONT_SIZE, FONT_FAMILY } from '../theme/theme';
 
 import GraduacaoJson from '../graduacao.json'; // Adjust path as needed
 
@@ -119,7 +120,7 @@ export default function Graduacao() {
     return (
       <View>
         <ActivityIndicator size="large" color={COLORS.primary} />
-        <Text style={styles.loadingText}>Carregando graduações...</Text>
+        <Texto style={styles.loadingText}>Carregando graduações...</Texto>
       </View>
     );
   }
@@ -127,13 +128,13 @@ export default function Graduacao() {
   if (error && !refreshing) {
     return (
       <View>
-        <Text style={styles.errorText}>Erro: {error}</Text>
+        <Texto style={styles.errorText}>Erro: {error}</Texto>
         <TouchableOpacity
           style={styles.retryButton}
           onPress={tentarNovamente}
           activeOpacity={0.8}
         >
-          <Text style={styles.retryButtonText}>Tentar novamente</Text>
+          <Texto style={styles.retryButtonText}>Tentar novamente</Texto>
         </TouchableOpacity>
       </View>
     );
@@ -157,23 +158,23 @@ export default function Graduacao() {
       {/* Card principal com informações */}
       <LinearGradient colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}>
         <View style={styles.cardPrincipal}>
-          <Text style={styles.titulo}>
+          <Texto style={styles.titulo}>
             O Judô é uma arte marcial que valoriza a disciplina, o respeito e o aprendizado contínuo.
-          </Text>
+          </Texto>
 
-          <Text style={styles.subtitulo}>O que são as graduações?</Text>
-          <Text style={styles.descricao}>
+          <Texto style={styles.subtitulo}>O que são as graduações?</Texto>
+          <Texto style={styles.descricao}>
             A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e o tempo de prática de cada judoca.
-          </Text>
+          </Texto>
 
-          <Text style={styles.subtitulo}>Como funciona a progressão?</Text>
-          <Text style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Text>
-          <Text style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Text>
-          <Text style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Text>
+          <Texto style={styles.subtitulo}>Como funciona a progressão?</Texto>
+          <Texto style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Texto>
+          <Texto style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Texto>
+          <Texto style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Texto>
         </View>
-        <View><Text></Text></View>
-        <View><Text></Text></View>
-        <View style={styles.bottomCard}><Text></Text></View>
+        <View><Texto></Texto></View>
+        <View><Texto></Texto></View>
+        <View style={styles.bottomCard}><Texto></Texto></View>
       </LinearGradient>
 
       {/* Container dos cards de faixas */}
@@ -189,6 +190,7 @@ export default function Graduacao() {
         ))}
 
       </View>
+
       {/* Modal */}
       <FaixaModal
         visible={modalVisible}
@@ -214,6 +216,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    paddingBottom: 65,
   },
   
   titulo: {

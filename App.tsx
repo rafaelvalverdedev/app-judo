@@ -1,4 +1,4 @@
-// App.tsx
+// // App.tsx
 // import React from 'react';
 // import { SafeAreaProvider } from 'react-native-safe-area-context';
 // import { NavigationContainer } from '@react-navigation/native';
@@ -32,6 +32,7 @@ export default function App() {
     'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
     'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
     'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+    'BitcountPropSingle': require('./assets/fonts/BitcountPropSingle-Medium.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -41,7 +42,8 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <SafeAreaProvider>
+
+    <SafeAreaProvider onLayout={onLayoutRootView}>
       <NavigationContainer>
         <TabNavigator />
       </NavigationContainer>

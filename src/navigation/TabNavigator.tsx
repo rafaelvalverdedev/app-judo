@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native'; // Importe StatusBar e SafeAreaView
 import { LinearGradient } from 'expo-linear-gradient';
+import { Texto } from '../components/Texto';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -45,9 +46,9 @@ export default function TabNavigator() {
                     resizeMode="cover"
                   />
                 )}
-                <Text style={styles.headerTitle}>
+                <Texto style={styles.headerTitle}>
                   {TITULOS[route.name] || route.name.toUpperCase()}
-                </Text>
+                </Texto>
               </LinearGradient>
 
             );
@@ -72,9 +73,9 @@ export default function TabNavigator() {
           ),
 
           tabBarLabel: ({ focused }) => (
-            <Text style={focused ? styles.textFocused : styles.textUnfocused}>
+            <Texto style={focused ? styles.textFocused : styles.textUnfocused}>
               {route.name}
-            </Text>
+            </Texto>
           ),
 
           // Ícones personalizados
@@ -146,7 +147,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     color: '#FFFFFF',
     fontSize: 20,
-    fontWeight: 'bold',
   },
 
   headerLogo: {
