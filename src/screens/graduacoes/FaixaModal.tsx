@@ -1,12 +1,12 @@
 // src/components/FaixaModal.tsx
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import { COLORS } from '../../layout'; // Adjust path as needed
+import { View, Text, ScrollView, TouchableOpacity, Image, Modal, StyleSheet, StatusBar } from 'react-native';
 import FaixaVisualizacao from './FaixaVisualizacao';
+
+import { imagensFaixas } from '../../components/imagensFaixas';
 
 import FaixaBranca from './ModalFaixaBranca'; // Adjust path as needed
 import FaixaCinza from './ModalFaixaCinza'; // Adjust path as needed
-
 
 // Tipos (assuming Faixa is defined elsewhere or imported)
 interface Faixa {
@@ -25,7 +25,6 @@ interface FaixaModalProps {
   onClose: () => void;
 }
 
-// Map of specific content components for each belt
 const faixaComponents: { [nome: string]: React.ComponentType } = {
   'Faixa Branca': FaixaBranca,
   'Faixa Cinza': FaixaCinza,
@@ -35,22 +34,27 @@ const faixaComponents: { [nome: string]: React.ComponentType } = {
 
 const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
   if (!faixa) return null;
-
+  
   const ConteudoComponente = faixaComponents[faixa.nome] || null;
+  const imagem = imagensFaixas[faixa.nome];
 
   return (
     <Modal
       visible={visible}
       animationType="fade"
       transparent
-      onRequestClose={onClose}
     >
+      <StatusBar backgroundColor="rgba(0, 0, 0, 0.5)" barStyle="light-content" />
+
       <View style={styles.modalOverlay}>
         <View style={styles.modalContainer}>
           <View style={styles.faixaContainer}>
+            
+            <Image source={imagem} style={{ width: 60, height: 60 }} resizeMode='contain' />
             <FaixaVisualizacao cor={faixa.cor} ponteira={faixa.ponteira} />
+
           </View>
-          <Text style={styles.modalTitulo}>{faixa.nome}</Text>
+          <Text style={styles.modalTitulo}>{faixa.nome} - {faixa.imagem} </Text>
           <ScrollView contentContainerStyle={styles.modalScrollContent}>
             {/* Renderiza componente específico da faixa */}
             {ConteudoComponente ? (<ConteudoComponente />) : (
@@ -63,8 +67,6 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
           {/* Botão "Fechar" fica fora do componente */}
           <TouchableOpacity
             onPress={onClose}
-            style={styles.botaoFechar}
-            activeOpacity={0.8}
           >
             <Text style={styles.botaoFecharTexto}>Fechar</Text>
           </TouchableOpacity>
@@ -76,14 +78,18 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
 
 const styles = StyleSheet.create({
   modalOverlay: {
-    flex: 1,
-    backgroundColor: COLORS.overlay,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   modalContainer: {
-    backgroundColor: COLORS.white,
+    backgroundColor: '#ffffff',
     width: '90%',
     maxHeight: '90%',
     borderRadius: 16,
@@ -119,12 +125,12 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: COLORS.primary,
+    backgroundColor: '#007AFF',
     borderRadius: 8,
     elevation: 2,
   },
   botaoFecharTexto: {
-    color: COLORS.white,
+    color: 'red',
     fontWeight: 'bold',
     fontSize: 14,
   },

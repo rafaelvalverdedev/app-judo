@@ -143,6 +143,7 @@ export default function Graduacao() {
   }
 
   return (
+
     <ScrollView
       contentContainerStyle={styles.scrollContent}
       showsVerticalScrollIndicator={false}
@@ -157,22 +158,22 @@ export default function Graduacao() {
         />
       }
     >
+
       {/* Card principal com informações */}
       <LinearGradient colors={['#6D0F0F', '#A81412']} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}>
         <View style={styles.cardPrincipal}>
-          <Texto style={styles.titulo}>
-            O Judô é uma arte marcial que valoriza a disciplina, o respeito e o aprendizado contínuo.
-          </Texto>
 
-          <Texto style={styles.subtitulo}>O que são as graduações?</Texto>
+          <Texto style={styles.titulo}>O que são as graduações?</Texto>
           <Texto style={styles.descricao}>
-            A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e o tempo de prática de cada judoca.
+            A progressão dos praticantes é representada pelas faixas (ou graduações), que indicam o nível técnico, a maturidade e conhecimento de cada judoca.
           </Texto>
 
-          <Texto style={styles.subtitulo}>Como funciona a progressão?</Texto>
+          {/* <Texto>  </Texto> */}
+
+          <Texto style={styles.titulo}>Como funciona a progressão?</Texto>
           <Texto style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Texto>
-          <Texto style={styles.item}>• Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Texto>
-          <Texto style={styles.item}>• Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Texto>
+          <Texto style={styles.item}>&#10004; Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Texto>
+          <Texto style={styles.item}>&#10004; Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Texto>
         </View>
         <View><Texto></Texto></View>
         <View><Texto></Texto></View>
@@ -193,6 +194,7 @@ export default function Graduacao() {
 
       </View>
 
+
       {/* Modal */}
       <FaixaModal
         visible={modalVisible}
@@ -208,34 +210,34 @@ export default function Graduacao() {
 const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
+    backgroundColor: '#f6f6f6',
   },
-  
+
   cardPrincipal: {
     margin: 10,
   },
-  
+
   containerCards: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     paddingBottom: 65,
   },
-  
-  titulo: {
-    color: '#fff',
-  },
 
-  subtitulo: {
-    color: '#fff',
+  titulo: {
+    color: '#f6f6f6',
+    fontFamily: FONT_FAMILY.DMSansBold,
+    fontSize: 24,
   },
 
   descricao: {
     color: '#fff',
+    marginLeft: 15,
   },
 
   item: {
     color: '#fff',
-    fontSize: FONT_SIZE.small,
+    marginLeft: 30,
   },
 
   errorText: {

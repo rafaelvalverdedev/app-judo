@@ -2,7 +2,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native'; // Importe StatusBar e SafeAreaView
+import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../components/Texto';
 import { COLORS, FONT_SIZE, FONT_FAMILY } from '../theme/theme';
@@ -68,19 +68,22 @@ export default function TabNavigator() {
 
           tabBarButton: (props) => (
             <Pressable
-              {...props}
-              android_ripple={{ color: '#8D99AE' }} // desativa o ripple nativo
-            />
+              android_ripple={{ color: '#8D99AE' }}
+              onPress={props.onPress}
+              style={props.style}
+            >
+              {props.children}
+            </Pressable>
           ),
 
-          tabBarLabel: ({ focused }) => (
+          tabBarLabel: ({ focused }: { focused: boolean }) => (
             <Texto style={focused ? styles.textFocused : styles.textUnfocused}>
               {route.name}
             </Texto>
           ),
 
           // Ícones personalizados
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
             let iconName: keyof typeof Ionicons.glyphMap = 'home';
 
             switch (route.name) {
@@ -105,7 +108,7 @@ export default function TabNavigator() {
 
             return (
               <Animatable.View
-                key={focused.toString() + route.name} // força recriação para bounceIn
+                key={`${focused ? 'focused' : 'unfocused'}-${route.name}`}
                 animation={focused
                   ? {
                     0: { transform: [{ scale: 1 }] },
@@ -114,7 +117,7 @@ export default function TabNavigator() {
                   }
                   : undefined
                 }
-                iterationCount={focused ? 'infinite' : 1} // 'infinite' para focado, 1 para desfocado
+                iterationCount={focused ? 'infinite' : 1}
                 duration={1000}
                 useNativeDriver
               >
@@ -140,9 +143,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingHorizontal: 20,
-    height: 80, // Altura ajustada para compensar o padding da SafeAreaView
+    height: 80,
   },
-  
+
   headerTitle: {
     fontSize: FONT_SIZE.xlarge,
     position: 'relative',
@@ -175,4 +178,5 @@ const styles = StyleSheet.create({
     color: '#8D99AE',
     fontSize: 14,
   },
+
 });

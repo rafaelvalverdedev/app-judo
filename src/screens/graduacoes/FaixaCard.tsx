@@ -94,7 +94,7 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
   return (
     <View style={styles.card}>
       {/* Topo com fundo gradiente curvo */}
-      <TouchableOpacity onPress={() => onPress(faixa)}>
+      <TouchableOpacity onPress={() => onPress({ ...faixa, imagem: imagemFaixas,  })}  style={styles.touchableContainer}>
         <View style={styles.topContainer}>
           <LinearGradient
             // style={styles.cardContainerLinear}
@@ -110,19 +110,24 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
               resizeMode="contain"
             />
 
-            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Texto>
+            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome} - {imagemFaixas} </Texto>
 
           </LinearGradient>
         </View>
 
         {/* Conteúdo */}
         <View style={styles.content}>
-          <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
-          <Texto style={styles.description}>{faixa.descricao}</Texto>
+          <View style={styles.contentText}>
+
+            <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
+            <Texto style={styles.description}>{faixa.descricao}</Texto>
+          
+          </View>
 
           {/* Botão */}
           <Texto style={styles.link}>[ Mais + ]</Texto>
         </View>
+
       </TouchableOpacity>
     </View >
   );
@@ -136,6 +141,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     elevation: 5,
     margin: 10,
+    justifyContent: 'space-between',
+  },
+
+  touchableContainer: {
+    flex: 1,
   },
 
   topContainer: {
@@ -153,7 +163,12 @@ const styles = StyleSheet.create({
   },
 
   content: {
+    flex: 1,
     padding: 10,
+  },
+
+  contentText: {
+    flex: 1,
   },
 
   title: {
@@ -163,7 +178,7 @@ const styles = StyleSheet.create({
   },
 
   description: {
-    color: '#666',
+    color: '#282828',
     margin: 5,
     textAlign: 'justify',
   },
@@ -174,7 +189,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     textAlign: 'left',
   },
-
 
   iconImage: {
     width: 60,
@@ -199,5 +213,6 @@ const styles = StyleSheet.create({
   },
 
 });
+
 
 export default FaixaCard;

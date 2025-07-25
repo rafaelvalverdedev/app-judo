@@ -9,7 +9,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
+    "descricao": "É o início da jornada, onde tudo ainda é desconhecido, mas cheio de possibilidades. Representa pureza, humildade e vontade de aprender."
   },
   {
     "cor": "#FFFFFF",
@@ -22,7 +22,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
+    "descricao": "Marca os primeiros passos firmes. A criança começa a entender as regras, desenvolver disciplina e aprender os valores do judô, como respeito e companheirismo."
   },
   {
     "cor": "#7a7772",
@@ -35,7 +35,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Cinza representa a progressão inicial da criança. Aqui o judoca já começa a entender quedas básicas e respeito com o colega."
+    "descricao": "Representa o progresso inicial. O judoca começa a dominar quedas básicas e entender o trabalho em dupla. É a fase do despertar técnico e social."
   },
   {
     "cor": "#9b9494",
@@ -48,7 +48,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Branca simboliza o começo da jornada no judô. É o momento de aprender as regras básicas, o espírito do judô e desenvolver disciplina."
+    "descricao": "Essa graduação representa a transição para um novo nível de entendimento. O judoca começa a unir técnica com postura e coordenação, reforçando os fundamentos aprendidos."
   },
   {
     "cor": "#0136af",
@@ -61,7 +61,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
+    "descricao": "Aqui, a técnica ganha força. O judoca evolui nos movimentos, aprende rolamentos mais complexos e mostra maior controle corporal. A base está sendo bem construída."
   },
   {
     "cor": "#0645cf",
@@ -74,7 +74,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
+    "descricao": "A mistura da estabilidade da azul com o brilho da amarela indica uma fase de refinamento técnico. O judoca já mostra fluidez nos movimentos e maior percepção tática."
   },
   {
     "cor": "#fbe734",
@@ -87,7 +87,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
+    "descricao": "Simboliza o brilho do progresso. O judoca já possui boa base técnica, desenvolve equilíbrio e coordenação, e começa a aplicar golpes com mais confiança."
   },
   {
     "cor": "#fbe734",
@@ -100,7 +100,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Azul marca a evolução técnica com aprendizados de postura, movimentação e rolamentos mais avançados."
+    "descricao": "Essa graduação mostra transição para um nível mais avançado. A técnica se aperfeiçoa, o raciocínio estratégico começa a surgir e o espírito do judoca amadurece."
   },
   {
     "cor": "#fc4a1a",
@@ -113,7 +113,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
+    "descricao": "Representa maturidade técnica. O judoca entende as projeções com mais profundidade, aplica combinações e começa a pensar como um lutador."
   },
   {
     "cor": "#1e4b19",
@@ -126,7 +126,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Laranja representa mais maturidade técnica, com foco em movimentações e projeções mais eficazes."
+    "descricao": "Na Faixa Verde, o judoca já tem domínio técnico considerável. O corpo e a mente trabalham juntos com fluidez, e a postura demonstra responsabilidade e confiança."
   },
   {
     "cor": "#50226e",
@@ -139,7 +139,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Roxa destaca o judoca como intermediário-avançado, dominando diversas técnicas e já auxiliando colegas iniciantes."
+    "descricao": "A Faixa Roxa é a ponte para a fase avançada. O judoca se destaca pelo conhecimento técnico, liderança entre os colegas e preparação para desafios maiores."
   },
   {
     "cor": "#562e19",
@@ -152,7 +152,7 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Marrom antecede a faixa preta. O judoca tem sólida base técnica, preparo físico e compreensão do espírito do judô."
+    "descricao": "Representando um nível elevado, o judoca possui uma sólida base física e mental. É respeitado no dojo e está prestes a se tornar exemplo e referência."
   },
   {
     "cor": "#060606",
@@ -165,6 +165,6 @@
     ],
     "videoUrl": "",
     "imagem": "",
-    "descricao": "A Faixa Preta não representa o fim, mas o verdadeiro começo do judô. Aqui o judoca se torna responsável por ensinar e evoluir constantemente."
+    "descricao": "A Faixa Preta simboliza o verdadeiro começo. É o ponto onde o judoca deixa de apenas aprender e passa a ensinar. Representa responsabilidade, humildade e a busca constante pela excelência."
   }
 ]

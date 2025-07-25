@@ -11,6 +11,7 @@ export function Texto({ style, ...rest }: TextProps) {
           fontFamily: FONT_FAMILY.DMSansRegular,
           fontSize: FONT_SIZE.medium,
           color: COLORS.text,
+          marginBottom: 10,
         },
         style as TextStyle,
       ]}
