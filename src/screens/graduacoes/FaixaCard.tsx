@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../../components/Texto'; // Adjust the import path as needed
-import { FONT_SIZE } from '../../theme/theme';
 
 interface Faixa {
   cor: string;
@@ -53,8 +52,8 @@ const coresTexto: string[] = [
   '#555555',
   '#555555',
 
-  '#163379',
-  '#163379',
+  '#ffffff',
+  '#ffffff',
 
   '#aa731b',
   '#aa731b',
@@ -110,7 +109,7 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
               resizeMode="contain"
             />
 
-            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome} - {imagemFaixas} </Texto>
+            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Texto>
 
           </LinearGradient>
         </View>
@@ -171,12 +170,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  title: {
-    fontWeight: '700',
-    marginBottom: 8,
-    color: '#444',
-  },
-
   description: {
     color: '#282828',
     margin: 5,
@@ -198,7 +191,8 @@ const styles = StyleSheet.create({
 
   titulo: {
     marginBottom: 6,
-    fontSize: FONT_SIZE.medium2,
+    fontSize: 22,
+    fontWeight: 900,
   },
 
   item: {
@@ -213,6 +207,5 @@ const styles = StyleSheet.create({
   },
 
 });
-
 
 export default FaixaCard;
