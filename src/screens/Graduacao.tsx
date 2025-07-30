@@ -1,4 +1,4 @@
-// src/screens/Graduacao.tsx (or wherever your main file is)
+// src/screens/Graduacao.tsx
 import React, { useState, useCallback, useEffect } from 'react';
 import {
   View,
@@ -6,20 +6,18 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
-  SafeAreaView,
   ActivityIndicator,
   RefreshControl,
 } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../components/Texto';
 
-import { COLORS, FONT_SIZE, FONT_FAMILY } from '../theme/theme';
+import { COLORS, FONT_FAMILY } from '../theme/theme';
 
-import GraduacaoJson from '../graduacao.json'; // Adjust path as needed
+// import GraduacaoJson from '../graduacao.json'; // Adjust path as needed
 
-// Import the separated components
 import { FaixaCard, FaixaModal } from './graduacoes'; // Using the index.ts export
-
 
 // Tipos (can be in a global types file or defined here if only used in this file)
 interface Faixa {
@@ -53,30 +51,29 @@ export default function Graduacao() {
       setError('');
 
       // DESENVOLVIMENTO: Usar JSON local
-      setFaixas(GraduacaoJson as Faixa[]);
+      //setFaixas(GraduacaoJson as Faixa[]);
 
       //PRODUÇÃO: Descomentar para usar API
       // ***
-      // const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json', {
-      //   // Adiciona cache-busting para garantir que sempre busque a versão mais recente
-      //   cache: 'no-cache',
-      //   headers: {
-      //     'Cache-Control': 'no-cache',
-      //   },
-      // });
+      const response = await fetch('https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json', {
+        // Adiciona cache-busting para garantir que sempre busque a versão mais recente
+        cache: 'no-cache',
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
 
-      // if (!response.ok) {
-      //   throw new Error(`Erro ${response.status}: ${response.statusText}`);
-      // }
+      if (!response.ok) {
+        throw new Error(`Erro ${response.status}: ${response.statusText}`);
+      }
 
-      // const data = await response.json();
-      // setFaixas(data as Faixa[]);
+      const data = await response.json();
+      setFaixas(data as Faixa[]);
       // ******
       //PARA USAR EM PRODUÇÃO, DESCOMENTAR ATE AQUI
 
       // Feedback visual para o usuário em caso de refresh
       if (isRefresh) {
-        // Opcional: Adicionar uma pequena mensagem de sucesso
         console.log('Graduações atualizadas com sucesso!');
       }
 

@@ -1,6 +1,6 @@
 // src/components/FaixaModal.tsx
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image, Modal, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, ScrollView, Image, Modal, StyleSheet, StatusBar } from 'react-native';
 
 import { imagensFaixas } from '../../components/imagensFaixas';
 
@@ -17,7 +17,6 @@ import FaixaVerde from './ModalFaixas/ModalFaixaVerde';
 import FaixaRoxa from './ModalFaixas/ModalFaixaRoxa';
 import FaixaMarrom from './ModalFaixas/ModalFaixaMarrom';
 import FaixaPreta from './ModalFaixas/ModalFaixaPreta';
-
 
 import { Texto } from '../../components/Texto';
 
@@ -85,7 +84,7 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
               </Texto>
             )}
           </ScrollView>
-
+            
           <Texto style={styles.botaoFecharTexto} onPress={onClose}>
             Fechar
           </Texto>
