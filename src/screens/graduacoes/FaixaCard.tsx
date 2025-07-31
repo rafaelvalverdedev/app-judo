@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../../components/Texto'; // Adjust the import path as needed
 
@@ -13,12 +13,12 @@ interface Faixa {
   descricao: string;
 }
 
+
 interface FaixaCardProps {
   faixa: Faixa;
   onPress: (faixa: Faixa) => void;
   index: number;
 }
-
 
 const gradientes: [string, string][] = [
   ['#ffffff', '#d8d6d6'],
@@ -32,18 +32,17 @@ const gradientes: [string, string][] = [
 
   ['#fbb034', '#fbe734'],
   ['#fbb034', '#fbe734'],
-
+  
   ['#f7b733', '#fc4a1a'],
-
+  
   ['#8ec06c', '#537b35'],
 
   ['#a626aa', '#6639b7'],
-
+  
   ['#a25016', '#562e19'],
 
   ['#444444', '#282828'],
 ];
-
 
 const coresTexto: string[] = [
   '#888888',
@@ -51,7 +50,7 @@ const coresTexto: string[] = [
 
   '#555555',
   '#555555',
-
+  
   '#ffffff',
   '#ffffff',
 
@@ -86,6 +85,9 @@ const imagemFaixa: any[] = [
 ];
 
 const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
+  
+  console.log(" - " + faixa.imagem);
+
   const gradiente = gradientes[index % gradientes.length];
   const corTexto = coresTexto[index % coresTexto.length];
   const imagemFaixas = imagemFaixa[index % imagemFaixa.length];
@@ -93,7 +95,7 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
   return (
     <View style={styles.card}>
       {/* Topo com fundo gradiente curvo */}
-      <TouchableOpacity onPress={() => onPress({ ...faixa, imagem: imagemFaixas,  })}  style={styles.touchableContainer}>
+      <TouchableOpacity onPress={() => onPress({ ...faixa, imagem: imagemFaixas, })} style={styles.touchableContainer}>
         <View style={styles.topContainer}>
           <LinearGradient
             // style={styles.cardContainerLinear}
@@ -120,7 +122,7 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
 
             <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
             <Texto style={styles.description}>{faixa.descricao}</Texto>
-          
+
           </View>
 
           {/* Botão */}

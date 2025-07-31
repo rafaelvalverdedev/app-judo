@@ -2,10 +2,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, StyleSheet, Image, Pressable, StatusBar, SafeAreaView } from 'react-native';
+import { StyleSheet, Image, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Texto } from '../components/Texto';
-import { COLORS, FONT_SIZE, FONT_FAMILY } from '../theme/theme';
+import { FONT_SIZE } from '../theme/theme';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -28,9 +28,6 @@ const TITULOS: Record<string, string> = {
 export default function TabNavigator() {
   return (
     <>
-      {/* Configuração da Barra de Status para combinar com o header */}
-      <StatusBar backgroundColor="#6D0F0F" barStyle="light-content" />
-
       <Tab.Navigator
         initialRouteName="Início"
         screenOptions={({ route, navigation }) => ({
@@ -148,12 +145,10 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     fontSize: FONT_SIZE.xlarge,
-    position: 'relative',
     color: '#FFFFFF',
   },
 
   headerLogo: {
-    position: 'relative',
     width: 60,
     height: 60,
     margin: 10,

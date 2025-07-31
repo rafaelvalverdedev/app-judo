@@ -3,6 +3,19 @@
     "name": "Judô Conde Koma",
     "slug": "judo-conde-koma",
     "version": "1.0.0",
+    "description": "App oficial da academia Judô Conde Koma - Treinos, graduações, técnicas e muito mais!",
+    "keywords": [
+      "judo",
+      "artes marciais",
+      "conde koma",
+      "academia",
+      "treino",
+      "graduacao"
+    ],
+    "privacy": "public",
+    "githubUrl": "https://https://github.com/rafaelvalverdedev/app-judo",
+    "primaryColor": "#000000",
+    "scheme": "judo-conde-koma",
     "orientation": "portrait",
     "icon": "./assets/icons/app-icon.png",
     "userInterfaceStyle": "automatic",
@@ -17,44 +30,64 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.rafaelvalverde.judocondekoma",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleDisplayName": "Judô Conde Koma",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false
+        }
       }
     },
-    "androidStatusBar": {
-      "backgroundColor": "#000000",
-      "barStyle": "light-content"
+    "requireFullScreen": false
+  },
+  "androidStatusBar": {
+    "backgroundColor": "#000000",
+    "barStyle": "light-content"
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/icons/adaptive-icon.png",
+      "backgroundColor": "#FFFFFF"
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.rafaelvalverde.judocondekoma",
-      "versionCode": 1
-    },
-    "web": {
-      "favicon": "./assets/icons/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "626ae467-7eb4-483f-9352-5d4e7fbabece"
-      }
-    },
-    "plugins": [
-      "expo-localization",
-      "expo-font"
+    "package": "com.rafaelvalverde.judocondekoma",
+    "versionCode": 1,
+    "permissions": [
+      "INTERNET",
+      "ACCESS_NETWORK_STATE"
     ],
-    "owner": "rafaelvalverde",
-    "updates": {
-      "enabled": true,
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/626ae467-7eb4-483f-9352-5d4e7fbabece"
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.rafaelvalverde.judocondekoma"
+  },
+  "web": {
+    "favicon": "./assets/icons/favicon.png",
+    "name": "Judô Conde Koma",
+    "shortName": "Judô App",
+    "lang": "pt-BR",
+    "scope": "/",
+    "themeColor": "#000000",
+    "description": "App oficial da academia Judô Conde Koma",
+    "dir": "auto",
+    "display": "standalone",
+    "orientation": "portrait",
+    "startUrl": "/"
+  },
+  "extra": {
+    "eas": {
+      "projectId": "626ae467-7eb4-483f-9352-5d4e7fbabece"
     }
+  },
+  "plugins": [
+    "expo-localization",
+    "expo-font"
+  ],
+  "owner": "rafaelvalverde",
+  "updates": {
+    "enabled": true,
+    "fallbackToCacheTimeout": 0,
+    "url": "https://u.expo.dev/626ae467-7eb4-483f-9352-5d4e7fbabece"
+  },
+  "runtimeVersion": {
+    "policy": "appVersion"
   }
 }
