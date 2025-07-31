@@ -1,126 +1,151 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
-  SectionList,
+  ScrollView,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
+import { buscarTecnicas, Faixa, Tecnica } from '../../../services/tecnicasService';
+
+interface TecnicaDisplay {
+  id: string;
+  name: string;
+  description: string;
+  categoria: string;
+  subcategoria: string;
+}
 
 const ModalFaixaBranca = () => {
-  // Estado para controlar quais seções estão expandidas
-  const [expandedSections, setExpandedSections] = useState<Record<string | number, boolean>>({});
+  const [expanded, setExpanded] = useState(true);
+  const [tecnicas, setTecnicas] = useState<TecnicaDisplay[]>([]);
+  const [faixaNome, setFaixaNome] = useState('');
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(true);
 
-  // Dados de exemplo
-  const initialData = [
-    {
-      title: 'Frutas',
-      id: 'frutas',
-      data: [
-        { id: '1', name: 'Maçã', description: 'Fruta vermelha e doce' },
-        { id: '2', name: 'Banana', description: 'Rica em potássio' },
-        { id: '3', name: 'Laranja', description: 'Rica em vitamina C' },
-      ],
-    },
-    {
-      title: 'Vegetais',
-      id: 'vegetais',
-      data: [
-        { id: '4', name: 'Cenoura', description: 'Rica em betacaroteno' },
-        { id: '5', name: 'Brócolis', description: 'Rico em ferro' },
-        { id: '6', name: 'Alface', description: 'Boa para saladas' },
-      ],
-    },
-    {
-      title: 'Laticínios',
-      id: 'laticinios',
-      data: [
-        { id: '7', name: 'Leite', description: 'Rico em cálcio' },
-        { id: '8', name: 'Queijo', description: 'Fonte de proteína' },
-        { id: '9', name: 'Iogurte', description: 'Contém probióticos' },
-      ],
-    },
-  ];
+  useEffect(() => {
+    const carregarTecnicas = async () => {
+      try {
+        setCarregando(true);
+        setErro('');
+        
+        const resultado = await buscarTecnicas();
 
-  // Função para alternar expansão da seção
-  const toggleSection = (sectionId: string | number) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [sectionId]: !prev[sectionId]
-    }));
-  };
+        // Filtra apenas a faixa "Branca"
+        const faixaBranca = resultado.find((item: Faixa) => item.faixa === "Branca");
+        
+        if (!faixaBranca) {
+          throw new Error('Faixa Branca não encontrada nos dados');
+        }
 
-  // Preparar dados baseado no estado de expansão
-  const getSectionData = () => {
-    return initialData.map(section => ({
-      ...section,
-      data: expandedSections[section.id] ? section.data : []
-    }));
-  };
+        // Processa as técnicas da faixa branca
+        const tecnicasProcessadas = faixaBranca.tecnicas.map((tecnica: Tecnica, i: number) => ({
+          id: `${i}`,
+          name: `${tecnica.japones} (${tecnica.portugues})`,
+          description: `${tecnica.categoria} - ${tecnica.subcategoria}`,
+          categoria: tecnica.categoria,
+          subcategoria: tecnica.subcategoria,
+        }));
 
-  // Renderizar cabeçalho da seção
-  const renderSectionHeader = ({
-    section,
-  }: {
-    section: {
-      title: string;
-      id: string;
-      data: { id: string; name: string; description: string }[];
+        setTecnicas(tecnicasProcessadas);
+        setFaixaNome(faixaBranca.faixa);
+        
+      } catch (err) {
+        const mensagem = err instanceof Error ? err.message : 'Erro ao buscar técnicas';
+        setErro(mensagem);
+        Alert.alert('Erro', mensagem);
+      } finally {
+        setCarregando(false);
+      }
     };
-  }) => {
-    const isExpanded = expandedSections[section.id];
 
-    return (
-      <TouchableOpacity
-        style={styles.sectionHeader}
-        onPress={() => toggleSection(section.id)}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.sectionTitle}>{section.title}</Text>
-        <Text style={styles.expandIcon}>
-          {isExpanded ? '▼' : '▶'}
-        </Text>
-      </TouchableOpacity>
-    );
+    carregarTecnicas();
+  }, []);
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded);
   };
 
-  // Renderizar item da lista
-  const renderItem = ({
-    item,
-  }: {
-    item: { id: string; name: string; description: string };
-  }) => (
-    <View style={styles.item}>
-      <Text style={styles.itemName}>{item.name}</Text>
-      <Text style={styles.itemDescription}>{item.description}</Text>
-    </View>
-  );
+  if (carregando) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#4a90e2" />
+        <Text style={styles.loadingText}>Carregando técnicas...</Text>
+      </View>
+    );
+  }
+
+  if (erro) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorTitle}>Erro ao carregar técnicas</Text>
+        <Text style={styles.errorMessage}>{erro}</Text>
+        <TouchableOpacity 
+          style={styles.retryButton}
+          onPress={() => {
+            setErro('');
+            setCarregando(true);
+            // Re-executar o useEffect
+          }}
+        >
+          <Text style={styles.retryButtonText}>Tentar novamente</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      <SectionList
-        sections={getSectionData()}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
-        stickySectionHeadersEnabled={false}
+      <ScrollView 
+        style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
-        scrollEnabled={false}
-      />
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Header da Faixa */}
+        <TouchableOpacity
+          style={styles.sectionHeader}
+          onPress={toggleExpansion}
+          activeOpacity={0.7}
+        >
+          <View style={styles.sectionHeaderContent}>
+            <Text style={styles.sectionTitle}>{faixaNome}</Text>
+            <Text style={styles.itemCount}>({tecnicas.length} técnicas)</Text>
+          </View>
+          <Text style={styles.expandIcon}>{expanded ? '▼' : '▶'}</Text>
+        </TouchableOpacity>
+
+        {/* Lista de Técnicas */}
+        {expanded && (
+          <View style={styles.tecnicasContainer}>
+            {tecnicas.map((tecnica, index) => (
+              <View key={tecnica.id}>
+                <View style={styles.item}>
+                  <Text style={styles.itemName}>{tecnica.name}</Text>
+                  <Text style={styles.itemDescription}>{tecnica.description}</Text>
+                </View>
+                {index < tecnicas.length - 1 && <View style={styles.separator} />}
+              </View>
+            ))}
+          </View>
+        )}
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#f5f5f5',
+  container: { 
+    flex: 1,
+    backgroundColor: '#f5f5f5' 
   },
-
-  
-  contentContainer: {
+  scrollView: {
+    flex: 1,
+  },
+  contentContainer: { 
     paddingBottom: 25,
+    paddingTop: 10,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -132,30 +157,45 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 8,
     marginHorizontal: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
     elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  sectionHeaderContent: {
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#fff',
   },
+  itemCount: {
+    fontSize: 12,
+    color: '#e6f3ff',
+    marginTop: 2,
+  },
   expandIcon: {
     fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
   },
+  tecnicasContainer: {
+    marginHorizontal: 10,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    overflow: 'hidden',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
   item: {
     backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingVertical: 15,
-    marginHorizontal: 10,
     borderLeftWidth: 3,
     borderLeftColor: '#4a90e2',
   },
@@ -168,11 +208,52 @@ const styles = StyleSheet.create({
   itemDescription: {
     fontSize: 14,
     color: '#666',
+    fontStyle: 'italic',
   },
   separator: {
     height: 1,
     backgroundColor: '#e0e0e0',
-    marginHorizontal: 10,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    paddingHorizontal: 20,
+  },
+  errorTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#d32f2f',
+    marginBottom: 10,
+  },
+  errorMessage: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  retryButton: {
+    backgroundColor: '#4a90e2',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+  },
+  retryButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '500',
   },
 });
 

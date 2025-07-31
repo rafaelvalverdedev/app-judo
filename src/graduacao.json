@@ -8,7 +8,6 @@
       "Sem idade mínima"
     ],
     "videoUrl": "",
-    "imagem": "../assets/faixas/branca.png",
     "descricao": "É o início da jornada, onde tudo ainda é desconhecido, mas cheio de possibilidades. Representa pureza, humildade e vontade de aprender."
   },
   {
@@ -21,7 +20,6 @@
       "Carência: 3 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Marca os primeiros passos firmes. A criança começa a entender as regras, desenvolver disciplina e aprender os valores do judô, como respeito e companheirismo."
   },
   {
@@ -34,7 +32,6 @@
       "Carência: 3 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Representa o progresso inicial. O judoca começa a dominar quedas básicas e entender o trabalho em dupla. É a fase do despertar técnico e social."
   },
   {
@@ -47,7 +44,6 @@
       "Carência: 6 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Essa graduação representa a transição para um novo nível de entendimento. O judoca começa a unir técnica com postura e coordenação, reforçando os fundamentos aprendidos."
   },
   {
@@ -60,7 +56,6 @@
       "Carência: 6 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Aqui, a técnica ganha força. O judoca evolui nos movimentos, aprende rolamentos mais complexos e mostra maior controle corporal. A base está sendo bem construída."
   },
   {
@@ -73,7 +68,6 @@
       "Carência: 6 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "A mistura da estabilidade da azul com o brilho da amarela indica uma fase de refinamento técnico. O judoca já mostra fluidez nos movimentos e maior percepção tática."
   },
   {
@@ -86,7 +80,6 @@
       "Carência: 6 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Simboliza o brilho do progresso. O judoca já possui boa base técnica, desenvolve equilíbrio e coordenação, e começa a aplicar golpes com mais confiança."
   },
   {
@@ -99,7 +92,6 @@
       "Carência: 12 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Essa graduação mostra transição para um nível mais avançado. A técnica se aperfeiçoa, o raciocínio estratégico começa a surgir e o espírito do judoca amadurece."
   },
   {
@@ -112,7 +104,6 @@
       "Carência: 12 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Representa maturidade técnica. O judoca entende as projeções com mais profundidade, aplica combinações e começa a pensar como um lutador."
   },
   {
@@ -125,7 +116,6 @@
       "Carência: 12 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Na Faixa Verde, o judoca já tem domínio técnico considerável. O corpo e a mente trabalham juntos com fluidez, e a postura demonstra responsabilidade e confiança."
   },
   {
@@ -138,7 +128,6 @@
       "Carência: 12 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "A Faixa Roxa é a ponte para a fase avançada. O judoca se destaca pelo conhecimento técnico, liderança entre os colegas e preparação para desafios maiores."
   },
   {
@@ -151,7 +140,6 @@
       "Carência: 12 meses"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "Representando um nível elevado, o judoca possui uma sólida base física e mental. É respeitado no dojo e está prestes a se tornar exemplo e referência."
   },
   {
@@ -164,7 +152,6 @@
       "Carência: 2 anos"
     ],
     "videoUrl": "",
-    "imagem": "",
     "descricao": "A Faixa Preta simboliza o verdadeiro começo. É o ponto onde o judoca deixa de apenas aprender e passa a ensinar. Representa responsabilidade, humildade e a busca constante pela excelência."
   }
 ]

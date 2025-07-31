@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, Modal, StyleSheet, StatusBar } from 'react-native';
 
-import { imagensFaixas } from '../../components/imagensFaixas';
+import { imagensFaixas } from '../../components/configFaixas';
 
 import FaixaBranca from './ModalFaixas/ModalFaixaBranca';
 import FaixaBrancaCinza from './ModalFaixas/ModalFaixaBrancaCinza';
@@ -27,7 +27,6 @@ interface Faixa {
   nome: string;
   requisitos: string[];
   videoUrl: string;
-  imagem?: string;
   descricao: string;
 }
 
@@ -66,7 +65,7 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
       transparent
     >
       <StatusBar backgroundColor="rgba(0, 0, 0, 0.5)" barStyle="light-content" />
-
+      
       <View style={styles.modalOverlay}>
 
         <View style={styles.Container}>
@@ -77,14 +76,14 @@ const FaixaModal = ({ visible, faixa, onClose }: FaixaModalProps) => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.modalScrollContent}>
-            {/* Renderiza componente específico da faixa */}
+
             {ConteudoComponente ? (<ConteudoComponente />) : (
               <Texto>
                 Conteúdo indisponível para esta faixa.
               </Texto>
             )}
           </ScrollView>
-            
+
           <Texto style={styles.botaoFecharTexto} onPress={onClose}>
             Fechar
           </Texto>

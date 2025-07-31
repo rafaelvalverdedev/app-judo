@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Texto } from '../../components/Texto'; // Adjust the import path as needed
+import { Texto } from '../../components/Texto';
+import { imagensFaixas, coresTexto, gradientes } from '../../components/configFaixas';
 
 interface Faixa {
   cor: string;
@@ -9,10 +10,8 @@ interface Faixa {
   nome: string;
   requisitos: string[];
   videoUrl: string;
-  imagem?: string;
   descricao: string;
 }
-
 
 interface FaixaCardProps {
   faixa: Faixa;
@@ -20,117 +19,37 @@ interface FaixaCardProps {
   index: number;
 }
 
-const gradientes: [string, string][] = [
-  ['#ffffff', '#d8d6d6'],
-  ['#ffffff', '#d8d6d6'],
-
-  ['#DCDCDC', '#9c9c9c'],
-  ['#DCDCDC', '#9c9c9c'],
-
-  ['#22abfa', '#0136af'],
-  ['#22abfa', '#0136af'],
-
-  ['#fbb034', '#fbe734'],
-  ['#fbb034', '#fbe734'],
-  
-  ['#f7b733', '#fc4a1a'],
-  
-  ['#8ec06c', '#537b35'],
-
-  ['#a626aa', '#6639b7'],
-  
-  ['#a25016', '#562e19'],
-
-  ['#444444', '#282828'],
-];
-
-const coresTexto: string[] = [
-  '#888888',
-  '#888888',
-
-  '#555555',
-  '#555555',
-  
-  '#ffffff',
-  '#ffffff',
-
-  '#aa731b',
-  '#aa731b',
-
-  '#f8e5d6',
-
-  '#295f51',
-
-  '#e5d6f8',
-
-  '#d1b59f',
-
-  '#9e9e9e',
-];
-
-const imagemFaixa: any[] = [
-  require('../../../assets/faixas/branca.png'),
-  require('../../../assets/faixas/branca-cinza.png'),
-  require('../../../assets/faixas/cinza.png'),
-  require('../../../assets/faixas/cinza-azul.png'),
-  require('../../../assets/faixas/azul.png'),
-  require('../../../assets/faixas/azul-amarela.png'),
-  require('../../../assets/faixas/amarela.png'),
-  require('../../../assets/faixas/amarela-laranja.png'),
-  require('../../../assets/faixas/laranja.png'),
-  require('../../../assets/faixas/verde.png'),
-  require('../../../assets/faixas/roxa.png'),
-  require('../../../assets/faixas/marrom.png'),
-  require('../../../assets/faixas/preta.png'),
-];
-
 const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
-  
-  console.log(" - " + faixa.imagem);
 
+  const imagem = imagensFaixas[faixa.nome]; 
   const gradiente = gradientes[index % gradientes.length];
   const corTexto = coresTexto[index % coresTexto.length];
-  const imagemFaixas = imagemFaixa[index % imagemFaixa.length];
 
   return (
     <View style={styles.card}>
-      {/* Topo com fundo gradiente curvo */}
-      <TouchableOpacity onPress={() => onPress({ ...faixa, imagem: imagemFaixas, })} style={styles.touchableContainer}>
+      <TouchableOpacity onPress={() => onPress(faixa)} style={styles.touchableContainer}>
         <View style={styles.topContainer}>
           <LinearGradient
-            // style={styles.cardContainerLinear}
             colors={gradiente}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.topGradient}
           >
+            <Image source={imagem} style={styles.iconImage} resizeMode="contain" />
 
-            <Image
-              source={imagemFaixas}
-              style={styles.iconImage}
-              resizeMode="contain"
-            />
-
-            <Texto style={[styles.titulo, { color: corTexto }]}>{faixa.nome}</Texto>
-
+            <Texto style={{ ...styles.titulo, color: corTexto }}>{faixa.nome}</Texto>
           </LinearGradient>
         </View>
 
-        {/* Conteúdo */}
         <View style={styles.content}>
           <View style={styles.contentText}>
-
-            <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
+            <Texto style={styles.requisitos}>{faixa.requisitos.join(', ')}</Texto>
             <Texto style={styles.description}>{faixa.descricao}</Texto>
-
           </View>
-
-          {/* Botão */}
           <Texto style={styles.link}>[ Mais + ]</Texto>
         </View>
-
       </TouchableOpacity>
-    </View >
+    </View>
   );
 };
 

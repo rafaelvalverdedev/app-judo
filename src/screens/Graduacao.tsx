@@ -13,6 +13,7 @@ import { StatusMessage } from '../components/StatusMessage';
 
 import { COLORS, FONT_FAMILY } from '../theme/theme';
 import { FaixaCard, FaixaModal } from './graduacoes';
+
 import { Faixa, buscarGraduacoes } from '../services/graduacoesService';
 
 export default function Graduacao() {
@@ -22,8 +23,6 @@ export default function Graduacao() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string>('');
-
-
   
   const carregarFaixas = useCallback(async (isRefresh = false) => {
     try {

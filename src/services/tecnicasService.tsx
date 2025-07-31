@@ -1,29 +1,31 @@
-// src/services/graduacoesService.ts
+// src/services/tecnicasService.ts
+
+export interface Tecnica {
+  japones: string;
+  portugues: string;
+  categoria: string;
+  subcategoria: string;
+}
 
 export interface Faixa {
-  cor: string;
-  ponteira: string;
-  nome: string;
-  requisitos: string[];
-  videoUrl: string;
-  imagem?: string;
-  descricao: string;
+  faixa: string;
+  tecnicas: Tecnica[];
 }
 
 // Caminho local para testes
-import graduacoesTeste from '../graduacao.json';
+import tecnicasTeste from '../tecnicas.json';
 
 // Alternador de ambiente
 const USAR_LOCAL = true;
 
 // Função para buscar graduações (API ou local)
-export async function buscarGraduacoes(): Promise<Faixa[]> {
+export async function buscarTecnicas(): Promise<Faixa[]> {
   if (USAR_LOCAL) {
     // Dados locais (úteis para testes offline ou desenvolvimento)
-    return graduacoesTeste as Faixa[];
+    return tecnicasTeste as Faixa[];
   }
 
-  const url = 'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/graduacao.json';
+  const url = 'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/tecnicas.json';
 
   try {
     const response = await fetch(url, {
@@ -42,7 +44,7 @@ export async function buscarGraduacoes(): Promise<Faixa[]> {
 
   } catch (err) {
     const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
-    console.error('Erro ao buscar graduações:', errorMessage);
+    console.error('Erro ao buscar tecnicas:', errorMessage);
     throw new Error(errorMessage);
   }
 }
