@@ -3,69 +3,33 @@
     "faixa": "Branca",
     "tecnicas": [
       {
-        "japones": "De-ashi-barai",
-        "portugues": "Varredura do pé avançado",
+        "japones": "O-SOTO-GARI",
+        "portugues": "Bater na perna por fora",
         "categoria": "Nage-waza",
-        "subcategoria": "Ashi-waza"
+        "subcategoria": "Ashi-waza ou Tati-waza (técinas de Pé)",
+        "ilustração": ""
       },
       {
-        "japones": "Uki-goshi",
-        "portugues": "Projeção de quadril flutuante",
+        "japones": "KOSHI-GURUMA",
+        "portugues": "Abraça o pescoço",
         "categoria": "Nage-waza",
-        "subcategoria": "Koshi-waza"
+        "subcategoria": "Ashi-waza ou Tati-waza (técinas de Pé)",
+        "ilustração": ""
       },
       {
-        "japones": "O-soto-gari",
-        "portugues": "Grande rasteira por fora",
+        "japones": "O-UCHI-GARI",
+        "portugues": "Bate por dentro da perna",
         "categoria": "Nage-waza",
-        "subcategoria": "Ashi-waza"
+        "subcategoria": "Ashi-waza ou Tati-waza (técinas de Pé)",
+        "ilustração": ""
       },
       {
-        "japones": "Kesa-gatame",
-        "portugues": "Imobilização tipo faixa",
+        "japones": "KUZURE-KESA-GATAME",
+        "portugues": "",
         "categoria": "Katame-waza",
-        "subcategoria": "Osaekomi-waza"
-      }
-    ]
-  },
-  {
-    "faixa": "Branca / Cinza",
-    "tecnicas": [
-      {
-        "japones": "Tai-otoshi",
-        "portugues": "Queda pelo corpo",
-        "categoria": "Nage-waza",
-        "subcategoria": "Te-waza"
-      },
-      {
-        "japones": "Kosoto-gari",
-        "portugues": "Pequena rasteira por fora",
-        "categoria": "Nage-waza",
-        "subcategoria": "Ashi-waza"
-      },
-      {
-        "japones": "Kata-gatame",
-        "portugues": "Imobilização com o ombro",
-        "categoria": "Katame-waza",
-        "subcategoria": "Osaekomi-waza"
-      }
-    ]
-  },
-  {
-    "faixa": "Preta",
-    "tecnicas": [
-      {
-        "japones": "Yoko-ura-nage",
-        "portugues": "Contra-ataque lateral reverso",
-        "categoria": "Nage-waza",
-        "subcategoria": "Yoko-sutemi-waza"
-      },
-      {
-        "japones": "Sankaku-gatame",
-        "portugues": "Imobilização em triângulo",
-        "categoria": "Katame-waza",
-        "subcategoria": "Kansetsu-waza"
-      }
+        "subcategoria": "Osaekomi-waza (Técnicas de Imobilização)",
+        "ilustração": ""
+      }      
     ]
   }
 ]

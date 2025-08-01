@@ -1,10 +1,12 @@
 // src/services/tecnicasService.ts
 
 export interface Tecnica {
+  ilustracao: string;
   japones: string;
   portugues: string;
   categoria: string;
   subcategoria: string;
+  vocabulario: string;
 }
 
 export interface Faixa {
@@ -22,7 +24,7 @@ const USAR_LOCAL = true;
 export async function buscarTecnicas(): Promise<Faixa[]> {
   if (USAR_LOCAL) {
     // Dados locais (úteis para testes offline ou desenvolvimento)
-    return tecnicasTeste as Faixa[];
+    return tecnicasTeste as unknown as Faixa[];
   }
 
   const url = 'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/tecnicas.json';

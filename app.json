@@ -40,7 +40,15 @@
         }
       }
     },
-    "requireFullScreen": false
+    "requireFullScreen": false,
+    "extra": {
+      "eas": {
+        "projectId": "626ae467-7eb4-483f-9352-5d4e7fbabece"
+      }
+    },
+    "android": {
+      "package": "com.rafaelvalverde.judocondekoma"
+    }
   },
   "androidStatusBar": {
     "backgroundColor": "#000000",
