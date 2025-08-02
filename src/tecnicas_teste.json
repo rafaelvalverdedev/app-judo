@@ -7,82 +7,82 @@
         {
           "name": "Seoi-nage",
           "description": "Uma técnica para jogar o oponente por cima do ombro direito, desequilibrando-o para a frente e inserindo o cotovelo direito por baixo de sua axila direita para carregá-lo nas costas.",
-          "exigencia": "Cinza - Azul"
+          "exigencia": ["Cinza - Azul"]
         },
         {
           "name": "Ippon-seoi-nage",
           "description": "Uma técnica para jogar o oponente por cima do ombro direito, desequilibrando-o para a frente e segurando seu braço direito por dentro com o braço direito para carregá-lo nas costas.",
-          "exigencia": "Cinza"
+          "exigencia": ["Cinza"]
         },
         {
           "name": "Seoi-otoshi",
           "description": "Uma técnica para puxar e derrubar o oponente, desequilibrando-o para a frente e caindo sobre um ou ambos os joelhos enquanto o carrega nas costas.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Tai-otoshi",
           "description": "Uma técnica para puxar e derrubar o oponente, desequilibrando-o para a frente e girando o corpo para a esquerda para colocar o pé direito na frente do pé dele.",
-          "exigencia": "Cinza - Azul"
+          "exigencia": ["Cinza - Azul"]
         },
         {
           "name": "Kata-guruma",
           "description": "Uma técnica para levantar o oponente sobre os dois ombros, na altura da nuca, e jogá-lo no chão, desequilibrando-o para a frente enquanto segura sua coxa direita por dentro com o braço direito.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Sukui-nage",
           "description": "Uma técnica para levantar e derrubar o oponente, desequilibrando-o para trás enquanto se posiciona atrás dele e segura as duas coxas com as duas mãos, ou outra técnica para levantar uma das coxas do oponente e jogá-lo no chão, inserindo a mão entre as pernas dele.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": [""]
         },
         {
           "name": "Obi-otoshi",
           "description": "Uma técnica para levantar e derrubar o oponente, agarrando a parte da frente do seu cinto com a mão direita, puxando-o para a frente enquanto se posiciona atrás dele e segurando seu quadril pela frente com a mão esquerda para desequilibrá-lo para trás.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Uki-otoshi",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o para a frente e puxando-o para o canto frontal-direito.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Sumi-otoshi",
           "description": "Uma técnica para empurrar e derrubar o oponente, desequilibrando-o para o canto traseiro-direito enquanto se posiciona com o pé esquerdo na parte externa do pé direito dele.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Yama-arashi",
           "description": "Uma técnica para varrer a perna direita do oponente com o pé direito e jogá-lo no chão, agarrando sua manga direita com a mão esquerda e segurando a lapela lateral direita com o polegar direito por dentro, enquanto o levanta para a frente para desequilibrá-lo.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Obi-tori-gaeshi",
           "description": "Uma técnica para jogar o oponente por cima do ombro direito, agarrando seu cinto por cima do ombro com a mão direita e segurando seu braço ou perna direita com a mão esquerda, enquanto o levanta.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Morote-gari",
           "description": "Uma técnica para ceifar e derrubar o oponente segurando as duas pernas dele pela parte externa com as duas mãos.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Kuchiki-taoshi",
           "description": "Uma técnica para empurrar o oponente para trás, segurando uma de suas pernas, seja por dentro ou por fora, com uma das mãos e puxando-a para cima.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Kibisu-gaeshi",
           "description": "Uma técnica para derrubar o oponente ceifando seu calcanhar, seja por dentro ou por fora, com uma das mãos.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Uchi-mata-sukashi",
           "description": "Uma técnica para defender a tentativa de Uchi-mata do oponente e jogá-lo no chão.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Ko-uchi-gaeshi",
           "description": "Uma técnica para desviar da tentativa de Ko-uchi-gari do oponente e jogá-lo no chão.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         }
       ]
     },
@@ -92,52 +92,52 @@
         {
           "name": "Uki-goshi",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o para a frente e inserindo o braço direito por sua axila esquerda, enquanto o carrega levemente sobre o quadril e torce o corpo.",
-          "exigencia": "Azul - Amarela"
+          "exigencia": ["Azul - Amarela"]
         },
         {
           "name": "O-goshi",
           "description": "Uma técnica para carregar o oponente nas costas do quadril e jogá-lo no chão, desequilibrando-o para a frente e inserindo o braço direito por sua axila esquerda enquanto segura seu quadril e o puxa para perto.",
-          "exigencia": "Cinza"
+          "exigencia": ["Cinza"]
         },
         {
           "name": "Koshi-guruma",
           "description": "Uma técnica para girar o oponente no eixo do quadril e jogá-lo no chão, desequilibrando-o para a frente e segurando seu pescoço com o braço direito enquanto projeta o quadril profundamente.",
-          "exigencia": "Branca - Cinza"
+          "exigencia": ["Branca - Cinza"]
         },
         {
           "name": "Tsurikomi-goshi",
           "description": "Uma técnica para carregar o oponente nas costas do quadril e jogá-lo no chão, desequilibrando-o para a frente enquanto agarra sua lapela frontal esquerda com a mão direita e a levanta.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Sode-tsurikomi-goshi",
           "description": "Uma técnica para carregar o oponente nas costas do quadril e jogá-lo no chão, desequilibrando-o para a frente enquanto agarra sua manga esquerda com a mão direita e a levanta.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Harai-goshi",
           "description": "Uma técnica para varrer o oponente para cima com a perna direita e jogá-lo no chão, desequilibrando-o para a frente e carregando-o nas costas do quadril direito.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Tsuri-goshi",
           "description": "Uma técnica para carregar o oponente nas costas do quadril e jogá-lo no chão, desequilibrando-o para a frente e agarrando a parte de trás de seu cinto para levantá-lo.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Hane-goshi",
           "description": "Uma técnica para impulsionar o oponente com as costas do quadril direito e a perna direita e jogá-lo no chão, desequilibrando-o para a frente.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Utsuri-goshi",
           "description": "Uma técnica para derrubar o oponente contra-atacando seu Nage-waza ou outro ataque, segurando e levantando seu quadril com o braço direito e transferindo-o para as costas do quadril.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Ushiro-goshi",
           "description": "Uma técnica para derrubar o oponente verticalmente contra-atacando seu Nage-waza ou outro ataque e segurando e levantando seu quadril.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         }
       ]
     },
@@ -147,107 +147,107 @@
         {
           "name": "De-ashi-harai",
           "description": "Uma técnica para varrer o pé direito do oponente com o pé esquerdo e jogá-lo no chão imediatamente quando ele dá um passo para a frente e transfere o peso para ele.",
-          "exigencia": "Azul"
+          "exigencia": ["Azul"]
         },
         {
           "name": "Hiza-guruma",
           "description": "Uma técnica para derrubar o oponente desequilibrando-o para a frente e segurando seu joelho direito com o pé esquerdo para girá-lo em torno dele.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Sasae-tsurikomi-ashi",
           "description": "Uma técnica para segurar o tornozelo direito do oponente com o pé esquerdo e jogá-lo no chão, desequilibrando-o enquanto o levanta para a frente.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "O-soto-gari",
           "description": "Uma técnica para ceifar a perna direita do oponente por fora com a perna direita e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": "Branca - Cinza"
+          "exigencia": ["Branca - Cinza"]
         },
         {
           "name": "O-uchi-gari",
           "description": "Uma técnica para ceifar a perna esquerda do oponente por dentro com a perna direita e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": "Branca - Cinza"
+          "exigencia": ["Branca - Cinza"]
         },
         {
           "name": "Ko-soto-gari",
           "description": "Uma técnica para ceifar o pé direito do oponente por fora com o pé esquerdo e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Ko-uchi-gari",
           "description": "Uma técnica para ceifar o pé direito do oponente por dentro com o pé direito e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": "Azul"
+          "exigencia": ["Azul"]
         },
         {
           "name": "Okuri-ashi-harai",
           "description": "Uma técnica para derrubar o oponente empurrando-o para a esquerda e varrendo seu pé direito com o pé esquerdo, de modo que os dois pés fiquem juntos.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Uchi-mata",
           "description": "Uma técnica para varrer a parte interna da coxa esquerda do oponente com a parte de trás da coxa direita e jogá-lo no chão, desequilibrando-o para a frente.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Ko-soto-gake",
           "description": "Uma técnica para derrubar o oponente desequilibrando-o para trás, enganchando o pé ou a perna esquerda por fora na perna direita dele e levantando seu corpo.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Ashi-guruma",
           "description": "Uma técnica para derrubar o oponente desequilibrando-o para a frente, colocando a perna direita em seu joelho direito e girando-o em seu eixo.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Harai-tsurikomi-ashi",
           "description": "Uma técnica para varrer o tornozelo do oponente com o pé esquerdo pela frente e jogá-lo no chão, desequilibrando-o enquanto o levanta para a frente.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "O-guruma",
           "description": "Uma técnica para derrubar o oponente desequilibrando-o para a frente e colocando a perna direita em torno da área de seu abdômen inferior à parte superior das coxas para girá-lo em seu eixo.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "O-soto-guruma",
           "description": "Uma técnica para derrubar o oponente desequilibrando-o para trás e colocando a perna direita atrás de ambas as pernas dele para girá-lo em seu eixo.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "O-soto-otoshi",
           "description": "Uma técnica para derrubar o oponente verticalmente, desequilibrando-o para trás e deslizando a perna direita na parte de trás de sua coxa direita.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Tsubame-gaeshi",
           "description": "Uma técnica para derrubar o oponente defendendo sua tentativa de varredura com o pé e contra-varrendo com o mesmo pé que estava sendo atacado.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "O-soto-gaeshi",
           "description": "Uma técnica para derrubar o oponente contra-ceifando sua tentativa de O-soto-gari com a perna que está sendo atacada.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "O-uchi-gaeshi",
           "description": "Uma técnica para derrubar o oponente contra-ceifando sua tentativa de O-uchi-gari com a perna que está sendo atacada.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Hane-goshi-gaeshi",
           "description": "Uma técnica para derrubar o oponente contra-atacando sua tentativa de Hane-goshi para ceifar ou enganchar seu pé de apoio por fora com o pé ou perna.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Harai-goshi-gaeshi",
           "description": "Uma técnica para derrubar o oponente contra-atacando sua tentativa de Harai-goshi para ceifar ou enganchar seu pé de apoio por fora com o pé ou perna.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Uchi-mata-gaeshi",
           "description": "Uma técnica para derrubar o oponente contra-atacando sua tentativa de Uchi-mata para ceifar ou enganchar seu pé de apoio por fora com o pé ou perna.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         }
       ]
     },
@@ -257,27 +257,27 @@
         {
           "name": "Tomoe-nage",
           "description": "Uma técnica para jogar o oponente por cima da cabeça, desequilibrando-o para a frente e colocando a sola do pé direito em seu abdômen inferior enquanto deita de costas.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Sumi-gaeshi",
           "description": "Uma técnica para jogar o oponente por cima da cabeça, desequilibrando-o para a frente, puxando a parte superior do corpo dele para perto, enquanto agarra sua lapela ou costas com a mão direita e se deita de costas, e levanta a parte interna da coxa esquerda dele com a parte inferior da perna direita.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Hikikomi-gaeshi",
           "description": "Uma técnica para jogar o oponente por cima da cabeça, desequilibrando-o para a frente, puxando a parte superior do corpo dele para perto, enquanto agarra a parte de trás do cinto dele com a mão direita e se deita de costas, e levanta a parte interna da coxa esquerda dele com a parte inferior da perna direita.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Tawara-gaeshi",
           "description": "Uma técnica para jogar o oponente por cima do ombro, desequilibrando-o para a frente, inclinando-se sobre as costas dele, segurando e levantando a parte superior do corpo dele com os dois braços enquanto se deita de costas.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Ura-nage",
           "description": "Uma técnica para jogar o oponente por cima do ombro, contra-atacando o Nage-waza ou outro ataque do oponente e segurando e levantando a parte superior do corpo dele enquanto se deita de costas.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         }
       ]
     },
@@ -287,82 +287,82 @@
         {
           "name": "Yoko-otoshi",
           "description": "Uma técnica para puxar e derrubar o oponente, desequilibrando-o para a direita e se deitando sobre o lado esquerdo enquanto desliza a perna esquerda em direção à parte externa do pé direito dele.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Tani-otoshi",
           "description": "Uma técnica para puxar e derrubar o oponente, desequilibrando-o para trás e se deitando sobre o lado esquerdo enquanto desliza a perna esquerda atrás dele.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Hane-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, aplicando Hane-goshi e segurando seu braço direito na axila direita.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Soto-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, desequilibrando-o para a frente, segurando seu braço direito na axila direita e projetando o quadril profundamente.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Uchi-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, desequilibrando-o para a frente, segurando seu braço direito por dentro com o braço direito e projetando o quadril profundamente.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Uki-waza",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o para o canto frontal-direito e esticando a perna esquerda para colocá-la na parte externa do pé direito dele enquanto se deita sobre o lado esquerdo e o gira.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Yoko-wakare",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o para a frente e pisando com os dois pés na parte externa do pé direito dele enquanto se deita sobre o lado esquerdo e o gira por cima do corpo.",
-          "exigencia": "Verde"
+          "exigencia": ["Verde"]
         },
         {
           "name": "Yoko-guruma",
           "description": "Uma técnica para girar e derrubar o oponente contra-atacando seu Nage-waza ou outro ataque, segurando seu quadril com o braço esquerdo para desequilibrá-lo para a frente, deslizando a perna direita entre as pernas dele pela frente enquanto torce o corpo e se deita sobre o lado esquerdo.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Yoko-gake",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o em direção ao seu dedinho do pé direito e empurrando e varrendo seu tornozelo externo direito com o pé esquerdo enquanto se deita sobre o lado esquerdo.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Daki-wakare",
           "description": "Uma técnica para jogar o oponente por cima do corpo, segurando a parte superior do corpo dele por trás quando ele está prestes a cair no chão com as duas mãos e os pés e torcendo o corpo enquanto se deita sobre o lado esquerdo.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "O-soto-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, aplicando O-soto-gari e segurando seu braço direito na axila direita.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Uchi-mata-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, aplicando Uchi-mata e segurando seu braço direito na axila direita.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Harai-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, aplicando Harai-goshi e segurando seu braço direito na axila direita.",
-          "exigencia": "Marrom"
+          "exigencia": ["Marrom"]
         },
         {
           "name": "Ko-uchi-makikomi",
           "description": "Uma técnica para envolver o oponente e jogá-lo no chão, desequilibrando-o para trás e enganchando a perna direita em sua perna direita por dentro enquanto se deita para a frente.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Kani-basami",
           "description": "Uma técnica para derrubar o oponente segurando a parte inferior do corpo dele com as duas pernas, desequilibrando-o para trás, virando o corpo em direção ao seu lado esquerdo e colocando a perna direita em seu abdômen inferior e a perna esquerda na parte de trás dos dois joelhos dele enquanto se deita sobre o lado esquerdo.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         },
         {
           "name": "Kawazu-gake",
           "description": "Uma técnica para derrubar o oponente puxando-o para perto, virando o corpo, enganchando a perna direita em torno da perna esquerda dele por dentro e levantando a perna para a frente enquanto se deita com ele.",
-          "exigencia": "Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."
+          "exigencia": ["Faixas intermediárias e avançadas (Laranja, Verde, Roxa, Marrom)."]
         }
       ]
     }
@@ -375,52 +375,52 @@
         {
           "name": "Kesa-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob o lado direito da região do peito, segurando seu braço direito com o braço esquerdo pelo lado direito do oponente deitado de costas e agarrando a parte de trás de sua gola com a mão direita.",
-          "exigencia": "Azul"
+          "exigencia": ["Azul"]
         },
         {
           "name": "Kuzure-kesa-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob o lado direito da região do peito, segurando seu braço direito com o braço esquerdo pelo lado direito do oponente deitado de costas e inserindo o braço direito por sua axila esquerda.",
-          "exigencia": "Branca - Cinza"
+          "exigencia": ["Branca - Cinza"]
         },
         {
           "name": "Ushiro-kesa-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob o lado esquerdo da região do peito, colocando o quadril esquerdo no lado direito do corpo dele pelo lado direito do oponente deitado de costas, segurando seu braço direito com o braço direito e a parte superior do corpo dele com o braço esquerdo.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Kata-gatame",
           "description": "Uma técnica para imobilizar o oponente segurando seu braço direito e pescoço com o lado direito do pescoço e os dois braços pelo lado direito do oponente deitado de costas.",
-          "exigencia": "Faixas básicas e intermediárias (Branca, Amarela, Laranja)."
+          "exigencia": ["Faixas básicas e intermediárias (Branca, Amarela, Laranja)."]
         },
         {
           "name": "Kami-shiho-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob a região do peito e do abdômen, agarrando os dois lados de seu cinto com as duas mãos pela parte de cima da cabeça enquanto ele está deitado de costas.",
-          "exigencia": "Cinza - Azul"
+          "exigencia": ["Cinza - Azul"]
         },
         {
           "name": "Kuzure-kami-shiho-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob a região do peito e do abdômen, segurando seu braço direito com o braço direito pela diagonal-direita da cabeça dele e agarrando o lado esquerdo de seu cinto com a mão esquerda enquanto ele está deitado de costas.",
-          "exigencia": "Faixas básicas e intermediárias (Branca, Amarela, Laranja)."
+          "exigencia": ["Faixas básicas e intermediárias (Branca, Amarela, Laranja)."]
         },
         {
           "name": "Yoko-shiho-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob a região do peito e do abdômen, agarrando seu cinto ou calças através das pernas dele com a mão direita pelo lado direito do oponente deitado de costas e segurando sua lapela lateral esquerda pela nuca com a mão esquerda.",
-          "exigencia": "Cinza"
+          "exigencia": ["Cinza"]
         },
         {
           "name": "Tate-shiho-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob a região do peito e do abdômen, deitando-se de bruços sobre o oponente deitado de costas, segurando seu braço direito e pescoço com as duas mãos e a parte inferior do corpo dele com as duas pernas.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Uki-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente com a perna direita, segurando seu braço direito com um ou ambos os braços pelo lado direito do oponente deitado de costas e esticando a perna esquerda para trás.",
-          "exigencia": "Faixas básicas e intermediárias (Branca, Amarela, Laranja)."
+          "exigencia": ["Faixas básicas e intermediárias (Branca, Amarela, Laranja)."]
         },
         {
           "name": "Ura-gatame",
           "description": "Uma técnica para imobilizar o oponente sob a região das costas, segurando seu braço direito com o braço direito pelo lado direito do oponente deitado de costas e agarrando a perna dele com a mão esquerda.",
-          "exigencia": "Faixas básicas e intermediárias (Branca, Amarela, Laranja)."
+          "exigencia": ["Faixas básicas e intermediárias (Branca, Amarela, Laranja)."]
         }
       ]
     },
@@ -430,62 +430,62 @@
         {
           "name": "Nami-juji-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente cruzando os pulsos pela frente, agarrando suas lapelas laterais com os dois polegares por dentro e empurrando com as duas mãos.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Gyaku-juji-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente cruzando os pulsos pela frente, agarrando suas lapelas laterais com os quatro dedos das duas mãos por dentro e apertando os braços.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Kata-juji-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente cruzando os pulsos pela frente, agarrando sua lapela lateral esquerda com os quatro dedos da mão esquerda por dentro e a lapela lateral direita com o polegar direito por dentro, puxando a mão esquerda e empurrando a mão direita.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Hadaka-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente sem usar o judogi, colocando o antebraço direito na garganta do oponente por trás e juntando o braço esquerdo a ele.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Okuri-eri-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente, agarrando sua lapela lateral esquerda pela garganta com a mão direita e a lapela frontal direita pela axila esquerda com a mão esquerda por trás, puxando a mão direita em direção à direita-traseira e puxando a mão esquerda para baixo.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Kataha-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente, agarrando sua lapela lateral esquerda pela garganta com a mão direita por trás, inserindo o braço esquerdo pela axila esquerda para levantar o braço para cima, puxando a mão direita em direção à direita-traseira e empurrando a mão esquerda por baixo do braço direito.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Katate-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente, agarrando sua lapela lateral direita com o polegar direito por dentro pelo lado esquerdo do oponente deitado de costas.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Ryote-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente com os punhos pela frente, agarrando sua lapela lateral esquerda com o polegar direito por dentro e a lapela lateral direita com o polegar esquerdo por dentro.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Sode-guruma-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente pela frente, colocando o antebraço direito em sua garganta e o antebraço esquerdo atrás do pescoço para segurá-lo entre eles, agarrando o punho direito com a mão esquerda e empurrando a mão direita para o lado direito de seu pescoço.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Tsukkomi-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente pela frente, agarrando sua lapela frontal direita com a mão esquerda e a lapela frontal esquerda com a mão direita e empurrando a mão direita em direção ao lado direito de seu pescoço.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Sankaku-jime",
           "description": "Uma técnica para estrangular a região do pescoço do oponente, segurando seu pescoço e a axila direita entre as duas pernas e enganchando o pé direito na parte de trás do joelho esquerdo enquanto forma uma figura triangular.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         },
         {
           "name": "Do-jime",
           "description": "Uma técnica para estrangular o oponente segurando a região do tronco dele entre as duas pernas.",
-          "exigencia": "Faixas avançadas (Roxa, Marrom)."
+          "exigencia": ["Faixas avançadas (Roxa, Marrom)."]
         }
       ]
     },
@@ -495,52 +495,52 @@
         {
           "name": "Ude-garami",
           "description": "Uma técnica para torcer e travar a articulação do cotovelo do oponente, agarrando seu pulso esquerdo com a mão esquerda pelo lado direito do oponente deitado de costas e inserindo a mão direita para segurar o próprio pulso esquerdo por baixo do braço superior dele.",
-          "exigencia": "Amarela"
+          "exigencia": ["Amarela"]
         },
         {
           "name": "Ude-hishigi-juji-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente, agarrando seu pulso direito com as duas mãos pelo lado direito do oponente deitado de costas e segurando seu braço superior entre as duas coxas.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ude-hishigi-ude-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente com as duas mãos, segurando seu pulso esquerdo entre o pescoço e o ombro direito pelo lado direito do oponente deitado de costas.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Ude-hishigi-hiza-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente com o joelho esquerdo, segurando seu braço direito sob a axila esquerda pela frente.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ude-hishigi-waki-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente, agarrando seu pulso direito com as duas mãos e segurando o braço sob a axila esquerda.",
-          "exigencia": "Laranja"
+          "exigencia": ["Laranja"]
         },
         {
           "name": "Ude-hishigi-hara-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente, agarrando seu pulso direito com a mão direita pelo lado direito do oponente e pressionando o braço dele no abdômen.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ude-hishigi-ashi-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente, enganchando a perna direita em seu braço direito pelo lado direito do oponente deitado de bruços.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ude-hishigi-te-gatame",
           "description": "Uma técnica para esticar e travar a articulação do cotovelo do oponente, inserindo o braço esquerdo pelo lado direito do oponente através de sua axila direita para agarrar sua lapela frontal esquerda e agarrando seu pulso direito com a mão direita, ou outra técnica para travar a articulação do cotovelo do oponente agarrando seu pulso com uma ou ambas as mãos e torcendo o pulso dele atrás de suas costas.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ude-hishigi-sankaku-gatame",
           "description": "Uma técnica para torcer ou esticar e travar a articulação do cotovelo do oponente, segurando seu pescoço e a axila direita entre as duas pernas e enganchando o pé direito na parte de trás do joelho esquerdo enquanto forma uma figura triangular.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         },
         {
           "name": "Ashi-garami",
           "description": "Uma técnica para esticar e travar a articulação do joelho do oponente, inserindo o pé esquerdo entre as pernas do oponente pela frente e envolvendo a perna esquerda em torno de sua perna direita por trás para empurrá-la em seu abdômen inferior.",
-          "exigencia": "Faixa marrom."
+          "exigencia": ["Faixa marrom."]
         }
       ]
     }
