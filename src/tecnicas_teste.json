@@ -7,7 +7,7 @@
         {
           "name": "Seoi-nage",
           "description": "Uma técnica para jogar o oponente por cima do ombro direito, desequilibrando-o para a frente e inserindo o cotovelo direito por baixo de sua axila direita para carregá-lo nas costas.",
-          "exigencia": ["Cinza - Azul"]
+          "exigencia": ["Cinza / Azul"]
         },
         {
           "name": "Ippon-seoi-nage",
@@ -22,7 +22,7 @@
         {
           "name": "Tai-otoshi",
           "description": "Uma técnica para puxar e derrubar o oponente, desequilibrando-o para a frente e girando o corpo para a esquerda para colocar o pé direito na frente do pé dele.",
-          "exigencia": ["Cinza - Azul"]
+          "exigencia": ["Cinza / Azul"]
         },
         {
           "name": "Kata-guruma",
@@ -92,7 +92,7 @@
         {
           "name": "Uki-goshi",
           "description": "Uma técnica para derrubar o oponente, desequilibrando-o para a frente e inserindo o braço direito por sua axila esquerda, enquanto o carrega levemente sobre o quadril e torce o corpo.",
-          "exigencia": ["Azul - Amarela"]
+          "exigencia": ["Azul / Amarela"]
         },
         {
           "name": "O-goshi",
@@ -102,7 +102,7 @@
         {
           "name": "Koshi-guruma",
           "description": "Uma técnica para girar o oponente no eixo do quadril e jogá-lo no chão, desequilibrando-o para a frente e segurando seu pescoço com o braço direito enquanto projeta o quadril profundamente.",
-          "exigencia": ["Branca - Cinza"]
+          "exigencia": ["Branca / Cinza"]
         },
         {
           "name": "Tsurikomi-goshi",
@@ -162,12 +162,12 @@
         {
           "name": "O-soto-gari",
           "description": "Uma técnica para ceifar a perna direita do oponente por fora com a perna direita e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": ["Branca - Cinza"]
+          "exigencia": ["Branca / Cinza"]
         },
         {
           "name": "O-uchi-gari",
           "description": "Uma técnica para ceifar a perna esquerda do oponente por dentro com a perna direita e jogá-lo no chão, desequilibrando-o para trás.",
-          "exigencia": ["Branca - Cinza"]
+          "exigencia": ["Branca / Cinza"]
         },
         {
           "name": "Ko-soto-gari",
@@ -380,7 +380,7 @@
         {
           "name": "Kuzure-kesa-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob o lado direito da região do peito, segurando seu braço direito com o braço esquerdo pelo lado direito do oponente deitado de costas e inserindo o braço direito por sua axila esquerda.",
-          "exigencia": ["Branca - Cinza"]
+          "exigencia": ["Branca / Cinza"]
         },
         {
           "name": "Ushiro-kesa-gatame",
@@ -395,7 +395,7 @@
         {
           "name": "Kami-shiho-gatame",
           "description": "Uma técnica para imobilizar a parte superior do corpo do oponente sob a região do peito e do abdômen, agarrando os dois lados de seu cinto com as duas mãos pela parte de cima da cabeça enquanto ele está deitado de costas.",
-          "exigencia": ["Cinza - Azul"]
+          "exigencia": ["Cinza / Azul"]
         },
         {
           "name": "Kuzure-kami-shiho-gatame",
