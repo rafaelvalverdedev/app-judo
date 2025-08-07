@@ -43,7 +43,7 @@ const FaixaCard: React.FC<FaixaCardProps> = ({ faixa, onPress, index }) => {
 
         <View style={styles.content}>
           <View style={styles.contentText}>
-            <Texto style={styles.requisitos}>{faixa.requisitos.join(', ')}</Texto>
+            <Texto style={styles.requisitos}>{faixa.requisitos}</Texto>
             <Texto style={styles.description}>{faixa.descricao}</Texto>
           </View>
           <Texto style={styles.link}>[ Mais + ]</Texto>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     color: '#282828',
     margin: 5,
     textAlign: 'justify',
+    letterSpacing: 0.15,
   },
 
   requisitos: {

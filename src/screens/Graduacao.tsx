@@ -1,6 +1,7 @@
 // src/screens/Graduacao.tsx
 import React, { useState, useCallback, useEffect } from 'react';
 import {
+  Text,
   View,
   ScrollView,
   StyleSheet,
@@ -103,6 +104,7 @@ export default function Graduacao() {
           <Texto style={styles.descricao}>As graduações do judô são divididas em dois grandes grupos:</Texto>
           <Texto style={styles.item}>&#10004; Faixas coloridas (Kyū) – representam os estágios iniciais e intermediários do judoca...</Texto>
           <Texto style={styles.item}>&#10004; Faixas pretas (Dan) – para judocas mais avançados, com alto grau de conhecimento técnico e filosófico.</Texto>
+          <Text></Text>
         </View>
         <View style={styles.bottomCard}><Texto></Texto></View>
       </LinearGradient>
@@ -135,6 +137,7 @@ const styles = StyleSheet.create({
   cardPrincipal: {
     margin: 10,
   },
+  
   containerCards: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -153,10 +156,11 @@ const styles = StyleSheet.create({
   item: {
     color: '#fff',
     marginLeft: 30,
+    marginBottom: 15,
   },
   bottomCard: {
     position: 'absolute',
-    bottom: -10,
+    bottom: -12,
     alignSelf: 'center',
     backgroundColor: '#f6f6f6',
     borderTopLeftRadius: 20,
