@@ -2,7 +2,7 @@
 import tecnicasTeste from '../tecnicas_teste.json';
 
 // Alternador de ambiente
-const USAR_LOCAL = true;
+const USAR_LOCAL = false;
 
 export async function buscarTecnicasNovo()  {
     if (USAR_LOCAL) {

@@ -14,7 +14,7 @@ export interface Faixa {
 import graduacoesTeste from '../graduacao.json';
 
 // Alternador de ambiente
-const USAR_LOCAL = true;
+const USAR_LOCAL = false;
 
 // Função para buscar graduações (API ou local)
 export async function buscarGraduacoes(): Promise<Faixa[]> {
