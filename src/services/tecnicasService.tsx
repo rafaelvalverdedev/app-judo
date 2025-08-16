@@ -34,8 +34,7 @@ export async function buscarTecnicasNovo(): Promise<TecnicasData> {
     return tecnicasLocal as TecnicasData;
   }
 
-  const url =
-    'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/src/tecnicas.json';
+  const url = 'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/master/src/tecnicas.json';
 
   try {
     const response = await fetch(url, {
