@@ -1,33 +1,41 @@
-// src/services/tecnicasService.ts
+// src/tecnicasService-novo.tsx
 
+// Importa localmente quando estiver em modo teste
+import tecnicasLocal from '../tecnicas.json';
+
+// Tipos baseados no JSON real
 export interface Tecnica {
-  ilustracao: string;
-  japones: string;
-  portugues: string;
-  categoria: string;
-  subcategoria: string;
-  vocabulario: string;
+  name: string;
+  description: string;
+  exigencia: string[];
 }
 
-export interface Faixa {
-  faixa: string;
-  tecnicas: Tecnica[];
+export interface SubGrupo {
+  total_techniques: number;
+  techniques: Tecnica[];
 }
 
-// Caminho local para testes
-import tecnicasTeste from '../tecnicas.json';
+export interface TecnicasData {
+  "Nage-Waza": {
+    total_techniques: number;
+    [sub: string]: SubGrupo | number; // Te-waza, Koshi-waza, etc.
+  };
+  "Katame-waza": {
+    total_techniques: number;
+    [sub: string]: SubGrupo | number; // Osaekomi-waza, Shime-waza, etc.
+  };
+}
 
 // Alternador de ambiente
-const USAR_LOCAL = false;
+const USAR_LOCAL = true;
 
-// Função para buscar graduações (API ou local)
-export async function buscarTecnicas(): Promise<Faixa[]> {
+export async function buscarTecnicasNovo(): Promise<TecnicasData> {
   if (USAR_LOCAL) {
-    // Dados locais (úteis para testes offline ou desenvolvimento)
-    return tecnicasTeste as unknown as Faixa[];
+    return tecnicasLocal as TecnicasData;
   }
 
-  const url = 'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/tecnicas.json';
+  const url =
+    'https://raw.githubusercontent.com/rafaelvalverdedev/app-judo/refs/heads/master/src/tecnicas.json';
 
   try {
     const response = await fetch(url, {
@@ -41,9 +49,8 @@ export async function buscarTecnicas(): Promise<Faixa[]> {
       throw new Error(`Erro ${response.status}: ${response.statusText}`);
     }
 
-    const data = await response.json();
-    return data as Faixa[];
-
+    const tecnicas = (await response.json()) as TecnicasData;
+    return tecnicas;
   } catch (err) {
     const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
     console.error('Erro ao buscar tecnicas:', errorMessage);
