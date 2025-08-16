@@ -27,7 +27,7 @@ export interface TecnicasData {
 }
 
 // Alternador de ambiente
-const USAR_LOCAL = true;
+const USAR_LOCAL = false;
 
 export async function buscarTecnicasNovo(): Promise<TecnicasData> {
   if (USAR_LOCAL) {
