@@ -3,6 +3,10 @@
 # dependencies
 node_modules/
 
+#arquivos ignorados pelo git
+src/services/tecnicasService.tsx
+src/tecnicas.json
+
 # Expo
 .expo/
 dist/
