@@ -13,8 +13,7 @@ export default function Home() {
         <View style={styles.container}>
           <Texto style={styles.title}>Judô Conde Koma</Texto>
           <Texto style={styles.paragraph}>
-            Este é o conteúdo da sua tela inicial.
-            Role para baixo para ver mais...
+           ATUALIZANDO INFORMAÇÕES
           </Texto>
 
 
