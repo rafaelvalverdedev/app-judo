@@ -16,7 +16,7 @@ export const imagensFaixas: { [nome: string]: any } = {
 };
 
 
-export const coresTexto: { [nome: string]: any } = [
+export const coresTexto: string[] = [
   '#888888',
   '#888888',
 

@@ -17,7 +17,7 @@
     "primaryColor": "#000000",
     "scheme": "judo-conde-koma",
     "orientation": "portrait",
-    "icon": "./assets/icons/app-icon.png",
+    "icon": "./assets/logo/logo.png",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash/splash.png",
