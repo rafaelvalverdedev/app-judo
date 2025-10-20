@@ -3,6 +3,12 @@
     "name": "Judô Conde Koma",
     "slug": "judo-conde-koma",
     "version": "1.0.0",
+    "sdkVersion": "53.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "description": "App oficial da academia Judô Conde Koma - Treinos, graduações, técnicas e muito mais!",
     "keywords": [
       "judo",
@@ -46,12 +52,7 @@
       "permissions": [
         "INTERNET",
         "ACCESS_NETWORK_STATE"
-      ],
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/adaptive-icon.png",
-        "backgroundColor": "#000000"
-      },
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.rafaelvalverde.judocondekoma"
+      ]
     },
     "web": {
       "favicon": "./assets/icons/favicon.png",
