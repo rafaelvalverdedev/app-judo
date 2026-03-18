@@ -3,22 +3,12 @@
     "name": "Judô Conde Koma",
     "slug": "judo-conde-koma",
     "version": "1.0.0",
-    "sdkVersion": "53.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
     "description": "App oficial da academia Judô Conde Koma - Treinos, graduações, técnicas e muito mais!",
-    "keywords": [
-      "judo",
-      "artes marciais",
-      "conde koma",
-      "academia",
-      "treino",
-      "graduacao"
-    ],
-    "privacy": "public",
     "githubUrl": "https://github.com/rafaelvalverdedev/app-judo",
     "primaryColor": "#000000",
     "scheme": "judo-conde-koma",
@@ -67,7 +57,6 @@
       "orientation": "portrait",
       "startUrl": "/"
     },
-    "requireFullScreen": false,
     "extra": {
       "eas": {
         "projectId": "626ae467-7eb4-483f-9352-5d4e7fbabece"
